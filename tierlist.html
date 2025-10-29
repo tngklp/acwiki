@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check the current meta rankings and tier lists for Anime Crusaders units.">
+    <title>Tier List - Anime Crusaders Wiki</title>
+    <link rel="preload" href="favicon.ico" as="image" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" crossorigin>
+    <link rel="preload" href="styles/style.css" as="style">
+    <link rel="preload" href="images/logo.webp" as="image">
+    <link rel="preload" href="fonts/MundoSansBlack.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="data/units.json" as="fetch" crossorigin>
+    <link rel="preload" href="data/tierlist/progressive.json" as="fetch" crossorigin>
+    <link rel="preload" href="data/tierlist/infinite.json" as="fetch" crossorigin>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/common.js"></script>
+    <script>
+        // Extract image URLs from units data
+        const imageUrlsExtractor = (data) => {
+            return data.units.map(unit => `images/units/${unit.image}`);
+        };
+
+        async function createTierList(data, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = ''; // Clear existing content
+
+            const unitsData = await loadData(
+                CACHE_KEYS.UNITS,
+                'data/units.json',
+                imageUrlsExtractor
+            );
+            
+            data.tiers.forEach(tier => {
+                const tierRow = document.createElement('div');
+                tierRow.className = `tier-row ${tier.class}`;
+
+                const tierLabel = document.createElement('div');
+                tierLabel.className = 'tier-label';
+                tierLabel.textContent = tier.name;
+
+                const tierUnits = document.createElement('div');
+                tierUnits.className = 'tier-units';
+
+                tier.units.forEach(unitId => {
+                    const unitCard = document.createElement('div');
+                    unitCard.className = 'unit-card interactive-card';
+                    
+                    const img = document.createElement('img');
+                    img.alt = 'Unit';
+                    
+                    const unitInfo = unitsData.units.find(info => info.id === unitId);
+                    if (unitInfo) {
+                        img.src = `images/units/${unitInfo.image}`;
+                        unitCard.addEventListener('click', () => showUnitInfo(unitId));
+                    }
+
+                    unitCard.appendChild(img);
+                    tierUnits.appendChild(unitCard);
+                });
+
+                tierRow.appendChild(tierLabel);
+                tierRow.appendChild(tierUnits);
+                container.appendChild(tierRow);
+            });
+        }
+
+        async function loadTierLists() {
+            try {
+                // Load Progressive Tier List
+                const progressiveData = await loadData(
+                    'tierlist_progressive_cache',
+                    'data/tierlist/tierlist_progressive.json'
+                );
+                await createTierList(progressiveData, 'tierList');
+
+                // Load Infinite Tier List
+                const infiniteData = await loadData(
+                    'tierlist_infinite_cache',
+                    'data/tierlist/tierlist_infinite.json'
+                );
+                await createTierList(infiniteData, 'infiniteTierList');
+            } catch (error) {
+                console.error('Error loading tier lists:', error);
+            }
+        }
+
+        // Add preloads
+        addPreloadLink('data/tierlist/progressive.json');
+        addPreloadLink('data/tierlist/infinite.json');
+        addPreloadLink('data/units.json');
+
+        // Load tier lists when the page is ready
+        ensureScriptLoaded(() => {
+            loadTierLists();
+            setupModalHandlers();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/images/logo.webp" alt="Anime Crusaders Logo">
+        </div>
+        <p class="subtitle">Anime Crusaders Wiki</p>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="units.html">Units</a>
+        <a href="traits.html">Traits</a>
+        <a href="items.html">Items</a>
+        <a href="tierlist.html" class="active">Tier List</a>
+        <a href="codes.html">Codes</a>
+        <a href="update_log.html">Update Log</a>
+    </nav>
+
+    <div class="container">
+        <div class="section">
+            <h2>🏆 Progressive Tier List</h2>
+            
+            <div class="tier-list" id="tierList">
+                <!-- Tiers will be loaded here dynamically -->
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏆 Infinite Tier List</h2>
+            
+            <div class="tier-list" id="infiniteTierList">
+                <!-- Tiers will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Unit Info Modal -->
+    <div id="unitInfoModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">×</button>
+            <div class="modal-header">
+                <img id="modalUnitImage" src="" alt="">
+                <div class="modal-details">
+                    <h2 id="modalUnitName"></h2>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-column">
+                    <div class="modal-section" id="passiveSection" style="display: none;">
+                        <h3>Passive(s)</h3>
+                        <div id="modalPassive"></div>
+                    </div>
+                    <div class="modal-section" id="abilitySection" style="display: none;">
+                        <h3>Ability</h3>
+                        <div id="modalAbilities"></div>
+                    </div>
+                </div>
+                <div class="modal-column">
+                    <div class="modal-section" id="statsSection">
+                        <h3>Base Stats</h3>
+                        <div class="stat-grid" id="modalStats"></div>
+                    </div>
+                    <div class="modal-section" id="costSection">
+                        <h3>Cost</h3>
+                        <div class="stat-grid" id="modalCosts"></div>
+                    </div>
+                    <div class="modal-section" id="traitsAndCurseSection">
+                        <div class="traits-and-curse-content">
+                            <h3 id="traitsHeader">Best Traits and Curse</h3>
+                            <div class="traits-container">
+                                <div class="traits-section">
+                                    <h4>Progressive</h4>
+                                    <div class="traits-and-curse" id="modalItemsProg"></div>
+                                </div>
+                                <div class="traits-section">
+                                    <h4>Infinite</h4>
+                                    <div class="traits-and-curse" id="modalItemsInf"></div>
+                                </div>
+                            </div>
+                            <div class="curse-container" id="modalBestCurse">
+                                <span id="modalCurseText"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('unitInfoModal');
+        const closeButton = modal.querySelector('.close-modal');
+
+        // Cache for units and tierlists data
+        let cachedUnits = null;
+        let cachedProgressiveTierlist = null;
+        let cachedInfiniteTierlist = null;
+
+        // Function to fetch and cache units data
+        async function getUnitsData() {
+            if (cachedUnits) return cachedUnits;
+            
+            const response = await fetch('data/units.json', {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            const data = await response.json();
+            cachedUnits = data.units;
+            return cachedUnits;
+        }
+
+        async function showUnitInfo(unitId) {
+            try {
+                const units = await getUnitsData();
+                const unitInfo = units.find(info => info.id === unitId);
+
+                if (!unitInfo) {
+                    console.error('Unit info not found:', unitId);
+                    return;
+                }
+
+                // Basic Info
+                document.getElementById('modalUnitImage').src = `images/units/${unitInfo.image}`;
+                document.getElementById('modalUnitName').textContent = unitInfo.name;
+
+                // Stats
+                const statsContainer = document.getElementById('modalStats');
+                statsContainer.innerHTML = '';
+                const statLabels = {
+                    damage: "Damage",
+                    spa: "SPA",
+                    range: "Range",
+                    yen: "Yen",
+                    hp: "HP"
+                };
+                
+                if (unitInfo.attributes.includes('Farm')) {
+                    // Only show Yen stat for farm units
+                    if (unitInfo.stats.yen) {
+                        const statItem = document.createElement('div');
+                        statItem.className = 'stat-item';
+                        statItem.innerHTML = `
+                            <span>${statLabels.yen}</span>
+                            <span>${unitInfo.stats.yen}¥</span>
+                        `;
+                        statsContainer.appendChild(statItem);
+                    }
+                } else {
+                    // Determine which stats to show based on unit type
+                    let statsToShow = ['spa', 'range'];
+                    
+                    // Add damage or HP based on summoner status
+                    if (unitInfo.attributes.includes('Summon')) {
+                        statsToShow.unshift('hp'); // Add HP at the beginning
+                    } else {
+                        statsToShow.unshift('damage'); // Add damage at the beginning
+                    }
+
+                    // Show the appropriate stats for the unit type
+                    statsToShow.forEach(stat => {
+                        if (stat in unitInfo.stats) {
+                            const statItem = document.createElement('div');
+                            statItem.className = 'stat-item';
+                            
+                            // Format the display value based on the stat type
+                            let displayValue = unitInfo.stats[stat];
+                            if (stat === 'spa') {
+                                displayValue = displayValue + 's';
+                            } else if (typeof displayValue === 'number') {
+                                displayValue = displayValue.toLocaleString();
+                            }
+
+                            statItem.innerHTML = `
+                                <span>${statLabels[stat]}</span>
+                                <span>${displayValue}</span>
+                            `;
+                            statsContainer.appendChild(statItem);
+                        }
+                    });
+                }
+
+                // Cost Information
+                const costsContainer = document.getElementById('modalCosts');
+                costsContainer.innerHTML = '';
+                
+                // Add placement cost
+                const placementItem = document.createElement('div');
+                placementItem.className = 'stat-item';
+                placementItem.innerHTML = `
+                    <span>Placement</span>
+                    <span>${unitInfo.placement_cost.toLocaleString()}¥</span>
+                `;
+                costsContainer.appendChild(placementItem);
+
+                // Add max upgrade cost
+                const upgradeItem = document.createElement('div');
+                upgradeItem.className = 'stat-item';
+                upgradeItem.innerHTML = `
+                    <span>Max Upgrade</span>
+                    <span>${unitInfo.max_upgrade_cost.toLocaleString()}¥</span>
+                `;
+                costsContainer.appendChild(upgradeItem);
+
+                // Ability
+                const abilitySection = document.getElementById('abilitySection');
+                const abilitiesContainer = document.getElementById('modalAbilities');
+                abilitiesContainer.innerHTML = '';
+                if (unitInfo.has_ability && unitInfo.ability.name) {
+                    const abilityItem = document.createElement('div');
+                    abilityItem.className = 'ability-item';
+                    const cooldownText = unitInfo.ability.global ? `CD: ${unitInfo.ability.cooldown}s Global` : `CD: ${unitInfo.ability.cooldown}s`;
+                    const upgradeText = unitInfo.ability.upgrade > 0 ? `Upgrade ${unitInfo.ability.upgrade} • ` : '';
+                    abilityItem.innerHTML = `
+                        <h4>${unitInfo.ability.name} <span class="cooldown">${upgradeText}${cooldownText}</span></h4>
+                        <p>${unitInfo.ability.description.replace(/\n/g, '<br>')}</p>
+                    `;
+                    abilitiesContainer.appendChild(abilityItem);
+                    abilitySection.style.display = 'block';
+                } else {
+                    abilitySection.style.display = 'none';
+                }
+
+                // Passive
+                const passiveSection = document.getElementById('passiveSection');
+                const passiveContainer = document.getElementById('modalPassive');
+                if (unitInfo.has_passive && unitInfo.passive.length > 0) {
+                    passiveContainer.innerHTML = unitInfo.passive.map(p => {
+                        const upgradeText = p.upgrade > 0 ? `Upgrade ${p.upgrade}` : '';
+                        const cooldownText = p.cooldown > 0 ? `CD: ${p.cooldown}s` : '';
+                        const metadataText = [upgradeText, cooldownText].filter(Boolean).join(' • ');
+                        const metadataSpan = metadataText ? ` <span class="cooldown">${metadataText}</span>` : '';
+                        
+                        return `
+                            <div class="ability-item">
+                                <h4>${p.name}${metadataSpan}</h4>
+                                <p>${p.description.replace(/\n/g, '<br>')}</p>
+                            </div>
+                        `;
+                    }).join('');
+                    passiveSection.style.display = 'block';
+                } else {
+                    passiveSection.style.display = 'none';
+                }
+
+                // Move stats section if both passive and ability are hidden
+                const statsSection = document.getElementById('statsSection');
+                const leftColumn = document.querySelector('.modal-column:first-child');
+                const rightColumn = document.querySelector('.modal-column:last-child');
+                
+                if (!unitInfo.has_passive && !unitInfo.has_ability) {
+                    leftColumn.appendChild(statsSection);
+                } else {
+                    rightColumn.insertBefore(statsSection, rightColumn.firstChild);
+                }
+
+                // Handle traits and curse section
+                const traitsAndCurseSection = document.getElementById('traitsAndCurseSection');
+                const traitsContainer = document.querySelector('.traits-container');
+                const curseContainer = document.getElementById('modalBestCurse');
+                const traitsHeader = document.getElementById('traitsHeader');
+                const progContainer = document.getElementById('modalItemsProg');
+                const infContainer = document.getElementById('modalItemsInf');
+
+                // First check if we should show the section at all
+                if (!unitInfo.traits && !unitInfo.curse) {
+                    traitsAndCurseSection.style.display = 'none';
+                } else {
+                    traitsAndCurseSection.style.display = 'block';
+                    
+                    // Reset all containers
+                    traitsContainer.style.display = 'none';
+                    curseContainer.style.display = 'none';
+
+                    let hasVisibleTraits = false;
+                    let hasVisibleCurse = false;
+
+                    // Show traits if they exist
+                    if (unitInfo.traits) {
+                        traitsContainer.style.display = 'flex';
+                        hasVisibleTraits = true;
+                    }
+
+                    // Show curse if it exists and has values
+                    if (unitInfo.curse && unitInfo.best_curse && unitInfo.best_curse[0]) {
+                        curseContainer.style.display = 'flex';
+                        hasVisibleCurse = true;
+                    }
+
+                    // Update header based on what's actually visible
+                    if (hasVisibleTraits && hasVisibleCurse) {
+                        traitsHeader.textContent = 'Best Traits and Curse';
+                    } else if (hasVisibleTraits) {
+                        traitsHeader.textContent = 'Best Traits';
+                    } else if (hasVisibleCurse) {
+                        traitsHeader.textContent = 'Best Curse';
+                    }
+                }
+
+                // Handle traits
+                if (unitInfo.traits) {
+                    traitsContainer.style.display = 'flex';
+                    progContainer.innerHTML = '';
+                    infContainer.innerHTML = '';
+
+                    // Progressive traits
+                    unitInfo.best_traits_progressive.forEach(trait => {
+                        const traitWrapper = document.createElement('div');
+                        traitWrapper.className = 'trait-wrapper';
+                        const traitImg = document.createElement('img');
+                        traitImg.src = `images/traits/${trait.toLowerCase()}.png`;
+                        traitImg.alt = trait;
+                        traitImg.title = trait;
+                        traitWrapper.appendChild(traitImg);
+                        progContainer.appendChild(traitWrapper);
+                    });
+
+                    // Infinite traits
+                    unitInfo.best_traits_infinite.forEach(trait => {
+                        const traitWrapper = document.createElement('div');
+                        traitWrapper.className = 'trait-wrapper';
+                        const traitImg = document.createElement('img');
+                        traitImg.src = `images/traits/${trait.toLowerCase()}.png`;
+                        traitImg.alt = trait;
+                        traitImg.title = trait;
+                        traitWrapper.appendChild(traitImg);
+                        infContainer.appendChild(traitWrapper);
+                    });
+                } else {
+                    traitsContainer.style.display = 'none';
+                }
+
+                // Handle curse
+                const curseText = document.getElementById('modalCurseText');
+                if (unitInfo.curse && unitInfo.best_curse && unitInfo.best_curse[0]) {
+                    curseContainer.style.display = 'flex';
+                    curseText.innerHTML = `
+                        <span class="good-curse"><strong>${unitInfo.best_curse[0]}</strong> <strong>↑</strong></span>
+                        <span class="separator">|</span>
+                        <span class="bad-curse"><strong>↓</strong> <strong>${unitInfo.best_curse[1] || 'None'}</strong></span>
+                    `;
+                } else {
+                    curseContainer.style.display = 'none';
+                }
+
+                // Update header based on what's being shown
+                if (unitInfo.traits && unitInfo.curse) {
+                    traitsHeader.textContent = 'Best Traits and Curse';
+                } else if (unitInfo.traits) {
+                    traitsHeader.textContent = 'Best Traits';
+                } else if (unitInfo.curse) {
+                    traitsHeader.textContent = 'Best Curse';
+                }
+
+                openModal();
+            } catch (error) {
+                console.error('Error loading unit info:', error);
+            }
+        }
+
+        function closeModal() {
+            modal.classList.add('closing');
+            document.body.style.overflow = 'auto';
+            
+            // Wait for animation to complete before hiding the modal
+            setTimeout(() => {
+                modal.style.display = 'none';
+                modal.classList.remove('closing');
+            }, 300); // Match the animation duration
+        }
+
+        function openModal() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Force a reflow to ensure the animation plays
+            void modal.offsetWidth;
+            modal.classList.remove('closing');
+        }
+
+        // Close modal when clicking the close button
+        closeButton.addEventListener('click', closeModal);
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+
+        async function createTierList(data, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = ''; // Clear existing content
+            
+            data.tiers.forEach(tier => {
+                const tierRow = document.createElement('div');
+                tierRow.className = `tier-row ${tier.class}`;
+
+                const tierLabel = document.createElement('div');
+                tierLabel.className = 'tier-label';
+                tierLabel.textContent = tier.name;
+
+                const tierUnits = document.createElement('div');
+                tierUnits.className = 'tier-units';
+
+                tier.units.forEach(unitId => {
+                    const unitCard = document.createElement('div');
+                    unitCard.className = 'unit-card interactive-card';
+                    
+                    const img = document.createElement('img');
+                    img.alt = 'Unit';
+                    
+                    // Load unit image using cached data
+                    getUnitsData()
+                        .then(units => {
+                            const unitInfo = units.find(info => info.id === unitId);
+                            if (unitInfo) {
+                                img.src = `images/units/${unitInfo.image}`;
+                                unitCard.addEventListener('click', () => showUnitInfo(unitId));
+                            }
+                        })
+                        .catch(error => console.error('Error loading unit info:', error));
+
+                    unitCard.appendChild(img);
+                    tierUnits.appendChild(unitCard);
+                });
+
+                tierRow.appendChild(tierLabel);
+                tierRow.appendChild(tierUnits);
+                container.appendChild(tierRow);
+            });
+        }
+
+        // Function to fetch and cache tierlist data
+        async function getTierlistData(listType) {
+            if (listType === 'progressive' && cachedProgressiveTierlist) {
+                return cachedProgressiveTierlist;
+            }
+            if (listType === 'infinite' && cachedInfiniteTierlist) {
+                return cachedInfiniteTierlist;
+            }
+            
+            const response = await fetch(`data/tierlist/${listType}.json`, {
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            const data = await response.json();
+            
+            if (listType === 'progressive') {
+                cachedProgressiveTierlist = data;
+            } else {
+                cachedInfiniteTierlist = data;
+            }
+            return data;
+        }
+
+        async function loadTierLists() {
+            try {
+                // Load Progressive Tier List
+                const progressiveData = await getTierlistData('progressive');
+                await createTierList(progressiveData, 'tierList');
+
+                // Load Infinite Tier List
+                const infiniteData = await getTierlistData('infinite');
+                await createTierList(infiniteData, 'infiniteTierList');
+            } catch (error) {
+                console.error('Error loading tier lists:', error);
+            }
+        }
+
+        // Load both tier lists when the page loads
+        window.addEventListener('load', loadTierLists);
+    </script>
+
+    <footer>
+        <p>Anime Crusaders Wiki by Raksha</p>
+    </footer>
+</body>
+</html>

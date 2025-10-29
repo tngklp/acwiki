@@ -1,0 +1,100 @@
+{
+  "tiers": [
+    {
+      "name": "Meta Hybrid",
+      "class": "meta-hybrid",
+      "units": [
+        "akuzo_evo",
+        "dracula_evo",
+        "brulo_evo",
+        "shadow_evo"
+      ]
+    },
+    {
+      "name": "Meta Ground",
+      "class": "meta-ground",
+      "units": [
+        "kurimi_evo",
+        "tengin_evo",
+        "nagu_evo",
+        "sun_woo_evo",
+        "psycho_evo",
+        "reijin_evo",
+        "fat_hitman_evo",
+        "lao_evo"
+      ]
+    },
+    {
+      "name": "Meta Hill",
+      "class": "meta-hill",
+      "units": [
+        "golden_spirit_evo",
+        "daume_evo",
+        "chonin_evo"
+      ]
+    },
+    {
+      "name": "Meta Support",
+      "class": "meta-support",
+      "units": [
+        "giu_evo",
+        "rio",
+        "bones_evo",
+        "shunks_evo",
+        "goju_evo",
+        "ries_evo"
+      ]
+    },
+    {
+      "name": "Hybrid",
+      "class": "hybrid",
+      "units": [
+        "igrith_evo",
+        "enol_evo",
+        "king",
+        "tanjuru_evo",
+        "slime_evo",
+        "getu_evo"
+      ]
+    },
+    {
+      "name": "Ground",
+      "class": "ground",
+      "units": [
+        "claw_evo",
+        "boo_evo",
+        "toju_evo",
+        "shaoten_evo",
+        "alfonz_evo",
+        "sweet_witch",
+        "edwao_evo",
+        "jiro",
+        "enmo_evo",
+        "ryoma_evo",
+        "haein_evo",
+        "ant_king_evo",
+        "hie_evo",
+        "kensu",
+        "ichi_evo"
+      ]
+    },
+    {
+      "name": "Hill",
+      "class": "hill",
+      "units": [
+        "haein_evo",
+        "goko_evo"
+      ]
+    },
+    {
+      "name": "Support",
+      "class": "support",
+      "units": [
+        "ai_evo",
+        "ukia",
+        "koichy",
+        "greybeard"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+    "traits": [
+        {
+            "name": "Fierce",
+            "image": "fierce.png",
+            "tier": "Rare",
+            "odds": 29.8,
+            "description": "Tier 1: +10% Damage\nTier 2: +12.5% Damage\nTier 3: +15% Damage"
+        },
+        {
+            "name": "Agile",
+            "image": "agile.png",
+            "tier": "Rare",
+            "odds": 24.8,
+            "description": "Tier 1: -7.5% Attack Cooldown\nTier 2: -10% Attack Cooldown\nTier 3: -12.5% Attack Cooldown"
+        },
+        {
+            "name": "Focus",
+            "image": "focus.png",
+            "tier": "Rare",
+            "odds": 24.8,
+            "description": "Tier 1: +12.5 Range\nTier 2: +15% Range\nTier 3: +17.5% Range"
+        },
+        {
+            "name": "Tactician",
+            "image": "tactician.png",
+            "tier": "Legendary",
+            "odds": 9.99,
+            "description": "+50% Unit XP Gain"
+        },
+        {
+            "name": "Gilded",
+            "image": "gilded.png",
+            "tier": "Legendary",
+            "odds": 5,
+            "description": "Other: -10% Upgrade Cost\nFarm: +20% Yen\nAI, AI (Idol): +1% Boost For Each Level"
+        },
+        {
+            "name": "Hawkeye",
+            "image": "hawkeye.png",
+            "tier": "Legendary",
+            "odds": 2.5,
+            "description": "+30% Range"
+        },
+        {
+            "name": "Overdrive",
+            "image": "overdrive.png",
+            "tier": "Legendary",
+            "odds": 1.5,
+            "description": "-20% Attack Cooldown"
+        },
+        {
+            "name": "Eclipse",
+            "image": "eclipse.png",
+            "tier": "Mythic",
+            "odds": 0.8,
+            "description": "+22.5% Damage\n+25% Boss Damage"
+        },
+        {
+            "name": "Aurora",
+            "image": "aurora.png",
+            "tier": "Mythic",
+            "odds": 0.36,
+            "description": "+10% Damage\n+20% True Damage\n+25% Range"
+        },
+        {
+            "name": "Radiant",
+            "image": "radiant.png",
+            "tier": "Mythic",
+            "odds": 0.2,
+            "description": "+27.5% Damage\n-15% Attack Cooldown\n+15% Range"
+        },
+        {
+            "name": "Biohazard",
+            "image": "biohazard.png",
+            "tier": "Mythic",
+            "odds": 0.15,
+            "description": "Units with this trait apply +75% Toxic Damage over 54 seconds when attacking.\n+10% Range"
+        },
+        {
+            "name": "Crusader",
+            "image": "crusader.png",
+            "tier": "Mythic",
+            "odds": 0.1,
+            "description": "+300% Damage\n-10% Attack Cooldown\n+10% Range\n1 Placement Limit\n2x Takedown Gain"
+        }
+    ]
+}

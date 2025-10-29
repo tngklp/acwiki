@@ -1,0 +1,191 @@
+{
+    "codes": [
+        {
+            "code": "HalloweenShutdown",
+            "rewards": "500 Gems\n5000 Pumpkins\n5 Divine Tokens",
+            "active": true
+        },
+        {
+            "code": "PumpkinHeist",
+            "rewards": "",
+            "active": true
+        },
+        {
+            "code": "WeeklyUpdates",
+            "rewards": "",
+            "active": true
+        },
+        {
+            "code": "Halloween",
+            "rewards": "",
+            "active": true
+        },
+        {
+            "code": "TrickOrTreat",
+            "rewards": "",
+            "active": true
+        },
+        {
+            "code": "BattlepassItemsFix",
+            "rewards": "Alchemist Ritual\nSteel Helmet",
+            "active": true
+        },
+        {
+            "code": "250KLikes",
+            "rewards": "",
+            "active": true
+        },
+        {
+            "code": "Update1.5Delay",
+            "rewards": "",
+            "active": true
+        },
+        {
+            "code": "Update1.5",
+            "rewards": "",
+            "active": true
+        },
+        {
+            "code": "HeyCrusaders",
+            "rewards": "1000 Gems\n25 Divine Tokens\n5 Stat Cubes\n5 Perfect Stat Cubes",
+            "active": true
+        },
+        {
+            "code": "StatCubes",
+            "rewards": "5 Stat Cubes\n8 Perfect Stat Cubes",
+            "active": true
+        },
+        {
+            "code": "Nightmare",
+            "rewards": "750 Gems\n5 Divine Tokens",
+            "active": true
+        },
+        {
+            "code": "Echolocation",
+            "rewards": "5 Divine Tokens",
+            "active": true
+        },
+        {
+            "code": "Destruction",
+            "rewards": "",
+            "active": true
+        },
+        {
+            "code": "LastBreath",
+            "rewards": "5 Divine Tokens",
+            "active": true
+        },
+        {
+            "code": "Update1",
+            "rewards": "",
+            "active": true
+        }
+    ],
+    "styleCodes": [
+        {
+            "code": "SubToRaise",
+            "rewards": "RaiseSpirit's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToDrexUchiha",
+            "rewards": "DrexUchiha's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToSukimoto",
+            "rewards": "Sukimoto Style",
+            "active": true
+        },
+        {
+            "code": "SubToHWxFade",
+            "rewards": "HW vs Fade Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToPery",
+            "rewards": "Pery's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToTigreTV",
+            "rewards": "Tigre's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToDevLuckk",
+            "rewards": "Luckk's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToPurple",
+            "rewards": "Purple's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToNagBlox",
+            "rewards": "NagBlox's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToReycaju",
+            "rewards": "Reykaju's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToCaptKiddJr2",
+            "rewards": "MrCaptKiddJr's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToSUB4RU",
+            "rewards": "SUB4RU's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToRexon",
+            "rewards": "Rexon's Signature Style",
+            "active": true
+        },
+        {
+            "code": "Flames",
+            "rewards": "Flame Style",
+            "active": true
+        },
+        {
+            "code": "SubToShinobi",
+            "rewards": "Shinobi's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToAdriansky",
+            "rewards": "Adriansky Style",
+            "active": true
+        },
+        {
+            "code": "SubToHW5567",
+            "rewards": "HW5567's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToCarson",
+            "rewards": "Carson Style",
+            "active": true
+        },
+        {
+            "code": "SubToZerozKinger",
+            "rewards": "ZerozKinger Style",
+            "active": true
+        },
+        {
+            "code": "Follow32_A1",
+            "rewards": "32_A1's Signature Style",
+            "active": true
+        },
+        {
+            "code": "SubToFade",
+            "rewards": "FadeUnchanged's Signature Style",
+            "active": false
+        }
+    ]
+}

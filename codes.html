@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codes - Anime Crusaders Wiki</title>
+    <link rel="preload" href="favicon.ico" as="image" type="image/x-icon">
+    <link rel="preload" href="data/codes.json" as="fetch" crossorigin>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" crossorigin>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/common.js"></script>
+    <script>
+        // Function to format numbers with thousands separators
+        function formatNumber(text) {
+            return text.replace(/\b(\d+)\b/g, match => {
+                return parseInt(match).toLocaleString('en-US');
+            });
+        }
+
+        async function loadCodes() {
+            const container = document.querySelector('.section');
+            
+            try {
+                // Load data using common function with cache bypass
+                const data = await loadData(
+                    CACHE_KEYS.CODES,
+                    'data/codes.json',
+                    null,
+                    true // bypass cache
+                );
+
+                // Keep the header and tip
+                container.innerHTML = `
+                    <h2>🎁 Codes</h2>
+                    <div class="tip">
+                        <strong>Note:</strong> To redeem codes, you must join the official x32 Roblox group. Different codes can have different level requirements. Once eligible, codes can be redeemed through the codes NPC for rewards.
+                    </div>
+                    <div class="table-container">
+                        <table class="traits-table">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Reward</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${data && data.codes && data.codes.length > 0 
+                                    ? data.codes.map(code => `
+                                        <tr>
+                                            <td><code>${code.code}</code></td>
+                                            <td>${code.rewards.split('\\n').map(formatNumber).join('<br>')}</td>
+                                            <td><span class="${code.active ? 'active' : 'expired'}">${code.active ? 'Active' : 'Expired'}</span></td>
+                                        </tr>
+                                    `).join('')
+                                    : '<tr><td colspan="3" style="text-align: center;">No active codes available.</td></tr>'
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 style="margin-top: 2rem;">🎨 Style Codes</h2>
+                    <div class="tip">
+                        <strong>Note:</strong> Style codes unlock unique visual themes and customization options for your profile. These rewards are purely cosmetic enhancements and do not provide any gameplay advantages.
+                    </div>
+                    <div class="table-container">
+                        <table class="traits-table">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Style</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${data && data.styleCodes && data.styleCodes.length > 0 
+                                    ? data.styleCodes.map(code => `
+                                        <tr>
+                                            <td><code>${code.code}</code></td>
+                                            <td>${code.rewards}</td>
+                                            <td><span class="${code.active ? 'active' : 'expired'}">${code.active ? 'Active' : 'Expired'}</span></td>
+                                        </tr>
+                                    `).join('')
+                                    : '<tr><td colspan="3" style="text-align: center;">No style codes available.</td></tr>'
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+
+            } catch (error) {
+                console.error('Error loading codes:', error);
+                container.innerHTML = `
+                    <h2>🎁 Codes</h2>
+                    <p style="text-align: center; color: #ff4444;">Error loading codes. Please try again later.</p>
+                `;
+            }
+        }
+
+        // Add preload for codes data
+        addPreloadLink('data/codes.json');
+
+        // Load codes when the page is ready
+        ensureScriptLoaded(loadCodes);
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/images/logo.webp" alt="Anime Crusaders Logo">
+        </div>
+        <p class="subtitle">Anime Crusaders Wiki</p>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="units.html">Units</a>
+        <a href="traits.html">Traits</a>
+        <a href="items.html">Items</a>
+        <a href="tierlist.html">Tier List</a>
+        <a href="codes.html" class="active">Codes</a>
+        <a href="update_log.html">Update Log</a>
+    </nav>
+
+    <div class="container">
+        <div class="section">
+            <h2>🎁 Codes</h2>
+            <div class="tip">
+                <strong>Note:</strong> These codes can be redeemed in-game for various rewards. Some codes might be time-limited or single-use.
+            </div>
+            <div class="table-container">
+                <table class="traits-table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Reward</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3" style="text-align: center;">Loading codes...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Anime Crusaders Wiki by Raksha</p>
+    </footer>
+</body>
+</html>
