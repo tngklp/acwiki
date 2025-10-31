@@ -41,6 +41,7 @@
                                 <tr>
                                     <th>Code</th>
                                     <th>Reward</th>
+                                    <th>Level Requirement</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
@@ -50,10 +51,11 @@
                                         <tr>
                                             <td><code>${code.code}</code></td>
                                             <td>${code.rewards.split('\\n').map(formatNumber).join('<br>')}</td>
+                                            <td>Level ${code.level || 0}</td>
                                             <td><span class="${code.active ? 'active' : 'expired'}">${code.active ? 'Active' : 'Expired'}</span></td>
                                         </tr>
                                     `).join('')
-                                    : '<tr><td colspan="3" style="text-align: center;">No active codes available.</td></tr>'
+                                    : '<tr><td colspan="4" style="text-align: center;">No active codes available.</td></tr>'
                                 }
                             </tbody>
                         </table>
@@ -119,7 +121,8 @@
         <a href="items">Items</a>
         <a href="tierlist">Tier List</a>
         <a href="codes" class="active">Codes</a>
-        <a href="update_log">Update Log</a>
+        <a href="update_logs">Update Logs</a>
+        <a href="feedback">Feedback</a>
     </nav>
 
     <div class="container">

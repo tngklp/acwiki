@@ -119,3 +119,49 @@ function ensureScriptLoaded(callback) {
         callback();
     }
 }
+
+// Mobile Navigation Menu
+document.addEventListener('DOMContentLoaded', () => {
+    // Create menu button if it doesn't exist
+    if (!document.querySelector('.menu-toggle')) {
+        const nav = document.querySelector('nav');
+        if (!nav) return; // Exit if nav doesn't exist
+        
+        const menuButton = document.createElement('button');
+        menuButton.className = 'menu-toggle';
+        menuButton.setAttribute('aria-label', 'Toggle navigation menu');
+        menuButton.innerHTML = `
+            <div class="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        `;
+
+        // Insert the menu button as first child of body
+        document.body.insertBefore(menuButton, document.body.firstChild);
+
+        // Add click event listener to toggle menu
+        menuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nav.classList.toggle('nav-open');
+            menuButton.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuButton.contains(e.target) && nav.classList.contains('nav-open')) {
+                nav.classList.remove('nav-open');
+                menuButton.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking a nav link
+        nav.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                nav.classList.remove('nav-open');
+                menuButton.classList.remove('active');
+            }
+        });
+    }
+});

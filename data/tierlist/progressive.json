@@ -23,7 +23,6 @@
         "claw_evo",
         "psycho_evo",
         "lao_evo",
-        "fat_hitman_evo",
         "reijin_evo"
       ]
     },
@@ -64,13 +63,14 @@
       "units": [
         "boo_evo",
         "toju_evo",
-        "shaoten_evo",
+        "fat_hitman_evo",
         "alfonz_evo",
         "sweet_witch",
+        "ryoma_evo",
         "edwao_evo",
         "jiro",
         "enmo_evo",
-        "ryoma_evo",
+        "shaoten_evo",
         "haein_evo",
         "ant_king_evo",
         "hie_evo",

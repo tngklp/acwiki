@@ -11,7 +11,7 @@
     <script src="scripts/common.js"></script>
     <script>
         async function loadTraits() {
-            const tbody = document.querySelector('.traits-table tbody');
+            const traitsContainer = document.getElementById('traits-container');
             
             try {
                 // Extract image URLs from trait data
@@ -31,24 +31,38 @@
                 data.traits.sort((a, b) => b.odds - a.odds);
 
                 // Clear existing content
-                tbody.innerHTML = '';
+                traitsContainer.innerHTML = '';
                 
-                // Add each trait to the table
+                // Add each trait to the grid
                 data.traits.forEach(trait => {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td>${trait.name}</td>
-                        <td><img src="images/traits/${trait.image}" alt="${trait.name} Trait" loading="lazy"></td>
-                        <td>${trait.tier}</td>
-                        <td>${trait.odds}%</td>
-                        <td>${trait.description.replace(/\n/g, '<br>')}</td>
+                    const traitCard = document.createElement('div');
+                    traitCard.className = 'trait-card';
+                    
+                    // Format description by splitting into tiers
+                    const tiers = trait.description.split('\n').map(tier => {
+                        if (tier.startsWith('Tier')) {
+                            const [tierNum, effect] = tier.split(': ');
+                            return `<div class="tier-effect"><span class="tier-number">${tierNum}:</span> ${effect}</div>`;
+                        }
+                        return `<div class="trait-effect">${tier}</div>`;
+                    }).join('');
+
+                    traitCard.innerHTML = `
+                        <div class="trait-icon">
+                            <img src="images/traits/${trait.image}" alt="${trait.name} Trait" loading="lazy">
+                        </div>
+                        <div class="trait-name">${trait.name}</div>
+                        <div class="trait-odds">${trait.odds}%</div>
+                        <div class="trait-description">
+                            ${tiers}
+                        </div>
                     `;
-                    tbody.appendChild(tr);
+                    traitsContainer.appendChild(traitCard);
                 });
 
             } catch (error) {
                 console.error('Error loading traits:', error);
-                displayTableError(tbody, 5);
+                traitsContainer.innerHTML = '<div class="error-message">Error loading traits data.</div>';
             }
         }
 
@@ -74,29 +88,15 @@
         <a href="items">Items</a>
         <a href="tierlist">Tier List</a>
         <a href="codes">Codes</a>
-        <a href="update_log">Update Log</a>
+        <a href="update_logs">Update Logs</a>
+        <a href="feedback">Feedback</a>
     </nav>
 
     <div class="container">
         <div class="section">
             <h2>✨ Traits</h2>
-            <div class="table-container">
-                <table class="traits-table">
-                    <thead>
-                        <tr>
-                            <th>Trait Name</th>
-                            <th>Image</th>
-                            <th>Tier</th>
-                            <th>Odds</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="5" style="text-align: center;">Loading traits data...</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="traits-grid">
+                <div id="traits-container"></div>
             </div>
         </div>
     </div>
