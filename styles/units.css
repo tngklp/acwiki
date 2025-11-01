@@ -1,0 +1,43 @@
+.button-group {
+    display: flex;
+    gap: 8px;
+}
+
+#toggleUnevo.toggle-filters-btn.active {
+    background: rgba(40, 40, 40, 0.6);
+    border-color: #404040;
+}
+
+#toggleUnevo.toggle-filters-btn.active:hover {
+    border-color: #ffffff;
+    background: rgba(40, 40, 40, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.nav-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+body.modal-open .menu-toggle {
+    display: none !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .search-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .button-group {
+        width: 100%;
+    }
+    
+    .toggle-btn,
+    .toggle-filters-btn {
+        flex: 1;
+        width: 100%;
+    }
+}

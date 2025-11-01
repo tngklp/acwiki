@@ -110,6 +110,7 @@ nav a.active {
     flex: 1;
     animation: fadeInUp 0.8s ease-out forwards;
     opacity: 0;
+    background: linear-gradient(135deg, #212121 0%, #202120 50%, #212121 100%);
 }
 
 @keyframes fadeInUp {
@@ -593,6 +594,23 @@ footer {
         justify-content: center;
     }
 
+    html, body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #212121 0%, #202120 50%, #212121 100%);
+    }
+
+    body.nav-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    body.nav-open .container,
+    body.nav-open .section {
+        background: linear-gradient(135deg, #212121 0%, #202120 50%, #212121 100%);
+    }
+
     nav {
         position: fixed;
         top: 0;
@@ -615,6 +633,10 @@ footer {
     nav.nav-open {
         left: 0;
         opacity: 1;
+    }
+
+    body.modal-open .menu-toggle {
+        display: none !important;
     }
 
     nav a {
@@ -988,16 +1010,39 @@ footer {
 
 .damage-filter[data-value="Physical"] {
     background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #FF0000 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 .damage-filter[data-value="Magic"] {
     background: linear-gradient(135deg, #000080 0%, #0000FF 50%, #1E90FF 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 .damage-filter[data-value="True"] {
     background: linear-gradient(135deg, #E8E8E8 0%, #FFFFFF 50%, #F8F8F8 100%);
     color: #000 !important;
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.damage-filter::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.1) 10px,
+        rgba(255, 255, 255, 0.1) 20px
+    );
 }
 
 /* Attribute Colors */
@@ -1193,7 +1238,7 @@ footer {
 /* Unit Info Specific Styles */
 .modal-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     margin-bottom: 20px;
 }
@@ -1207,14 +1252,29 @@ footer {
 
 .modal-details h2 {
     color: #ffffff;
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 0;
     border: none;
+    font-size: 1.8rem;
+}
+
+.modal-details {
+    margin-top: -4px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-details h2 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 .modal-details p {
     color: #e0e0e0;
-    margin: 5px 0;
+    margin: 0;
 }
 
 .modal-body {
@@ -1769,6 +1829,79 @@ footer {
 .interactive-card:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
+}
+
+.modal-icons-container {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    align-items: center;
+}
+
+.attributes-container,
+.damage-types-container,
+.elements-container {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    height: 32px;
+}
+
+.attribute-badge {
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    width: 85px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+}
+
+.attribute-badge[data-value="Hybrid"] {
+    background: linear-gradient(135deg, #FF1E1E 0%, #FF6B6B 100%);
+}
+
+.attribute-badge[data-value="Ground"] {
+    background: linear-gradient(135deg, #1E90FF 0%, #87CEFA 100%);
+}
+
+.attribute-badge[data-value="Hill"] {
+    background: linear-gradient(135deg, #2ECC71 0%, #98FB98 100%);
+}
+
+.attribute-badge[data-value="Summon"] {
+    background: linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%);
+}
+
+.attribute-badge[data-value="Farm"] {
+    background: linear-gradient(135deg, #FFD700 0%, #FFF68F 100%);
+    color: #000;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.attribute-badge[data-value="Buff"] {
+    background: linear-gradient(135deg, #9932CC 0%, #DA70D6 100%);
+}
+
+.damage-type-icon,
+.element-icon {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    padding: 4px;
+    margin: 0;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+    background: rgba(40, 40, 40, 0.4);
+    border-radius: 6px;
 }
 
 /* Non-selectable Content */

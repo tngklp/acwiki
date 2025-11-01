@@ -15,6 +15,7 @@
     <link rel="preload" href="data/tierlist/infinite.json" as="fetch" crossorigin>
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/common.js"></script>
+    <script src="scripts/tierlist.js"></script>
     <script>
         // Extract image URLs from units data
         const imageUrlsExtractor = (data) => {
@@ -93,7 +94,6 @@
         // Load tier lists when the page is ready
         ensureScriptLoaded(() => {
             loadTierLists();
-            setupModalHandlers();
         });
     </script>
 </head>
@@ -142,6 +142,11 @@
                 <img id="modalUnitImage" src="" alt="">
                 <div class="modal-details">
                     <h2 id="modalUnitName"></h2>
+                    <div class="modal-icons-container">
+                        <div class="attributes-container" id="modalAttributes"></div>
+                        <div class="damage-types-container" id="modalDamageTypes"></div>
+                        <div class="elements-container" id="modalElements"></div>
+                    </div>
                 </div>
             </div>
             <div class="modal-body">
@@ -157,7 +162,7 @@
                 </div>
                 <div class="modal-column">
                     <div class="modal-section" id="statsSection">
-                        <h3>Base Stats</h3>
+                        <h3>Base Stats (Max Level)</h3>
                         <div class="stat-grid" id="modalStats"></div>
                     </div>
                     <div class="modal-section" id="costSection">
@@ -198,16 +203,18 @@
 
         // Function to fetch and cache units data
         async function getUnitsData() {
-            if (cachedUnits) return cachedUnits;
-            
+            // Always fetch fresh data
             const response = await fetch('data/units.json', {
                 headers: {
-                    'Accept': 'application/json'
-                }
+                    'Accept': 'application/json',
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache'
+                },
+                cache: 'no-store'
             });
             const data = await response.json();
             cachedUnits = data.units;
-            return cachedUnits;
+            return data.units;
         }
 
         async function showUnitInfo(unitId) {
@@ -224,7 +231,52 @@
                 document.getElementById('modalUnitImage').src = `images/units/${unitInfo.image}`;
                 document.getElementById('modalUnitName').textContent = unitInfo.name;
 
-                // Stats
+                // Attributes, Damage Types and Elements
+                const attributesContainer = document.getElementById('modalAttributes');
+                const damageTypesDiv = document.getElementById('modalDamageTypes');
+                const elementsDiv = document.getElementById('modalElements');
+
+                // Clear previous icons and badges
+                attributesContainer.innerHTML = '';
+                
+                // Add attribute badges
+                if (unitInfo.attributes && unitInfo.attributes.length > 0) {
+                    unitInfo.attributes.forEach(attr => {
+                        const badge = document.createElement('span');
+                        badge.className = 'attribute-badge';
+                        badge.setAttribute('data-value', attr);
+                        badge.textContent = attr;
+                        attributesContainer.appendChild(badge);
+                    });
+                }
+                
+                // Clear previous icons
+                damageTypesDiv.innerHTML = '';
+                elementsDiv.innerHTML = '';
+                
+                // Add damage type icons if they exist
+                if (unitInfo.damage_type && unitInfo.damage_type.length > 0) {
+                    unitInfo.damage_type.forEach(type => {
+                        const img = document.createElement('img');
+                        img.src = `images/icons/damage_types/${type.toLowerCase()}.png`;
+                        img.alt = type;
+                        img.title = type;
+                        img.className = 'damage-type-icon';
+                        damageTypesDiv.appendChild(img);
+                    });
+                }
+                
+                // Add element icons if they exist
+                if (unitInfo.elements && unitInfo.elements.length > 0) {
+                    unitInfo.elements.forEach(element => {
+                        const img = document.createElement('img');
+                        img.src = `images/icons/elements/${element.toLowerCase()}.png`;
+                        img.alt = element;
+                        img.title = element;
+                        img.className = 'element-icon';
+                        elementsDiv.appendChild(img);
+                    });
+                }                // Stats
                 const statsContainer = document.getElementById('modalStats');
                 statsContainer.innerHTML = '';
                 const statLabels = {

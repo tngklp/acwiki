@@ -27,30 +27,30 @@
         {
             "code": "HalloweenShutdown",
             "rewards": "500 Gems\n5000 Pumpkins\n5 Divine Tokens",
-            "level": 0,
+            "level": 5,
             "active": true
         },
         {
             "code": "PumpkinHeist",
-            "rewards": "",
+            "rewards": "1000 Gems\n7500 Pumpkins\n25 Divine Tokens",
             "level": 25,
             "active": true
         },
         {
             "code": "WeeklyUpdates",
-            "rewards": "",
+            "rewards": "1000 Gems\n25 Divine Tokens",
             "level": 25,
             "active": true
         },
         {
             "code": "Halloween",
-            "rewards": "",
+            "rewards": "1000 Gems\n25 Divine Tokens",
             "level": 15,
             "active": true
         },
         {
             "code": "TrickOrTreat",
-            "rewards": "",
+            "rewards": "1000 Gems\n7500 Pumpkins\n25 Divine Tokens",
             "level": 15,
             "active": true
         },
@@ -62,13 +62,13 @@
         },
         {
             "code": "250KLikes",
-            "rewards": "",
+            "rewards": "1000 Gems\n15 Divine Tokens",
             "level": 15,
             "active": true
         },
         {
             "code": "Update1.5Delay",
-            "rewards": "",
+            "rewards": "1000 Gems\n40 Divine Tokens",
             "level": 25,
             "active": true
         },

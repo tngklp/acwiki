@@ -83,23 +83,17 @@
     border-radius: 8px;
     color: #ffffff;
     font-size: 1rem;
-    transition: all 0.3s ease;
     font-family: inherit;
 }
 
 .form-group select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b794f6'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1.5em;
     padding-right: 2.5rem;
-    transition: all 0.3s ease;
-}
-
-.form-group select:hover {
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
 }
 
 .form-group textarea {
@@ -117,12 +111,18 @@
     transform: translateY(-2px);
 }
 
-.form-group select:hover,
 .form-group input:hover,
 .form-group textarea:hover {
     border-color: #666666;
     background: rgba(45, 45, 45, 0.7);
     transform: translateY(-1px);
+    transition: all 0.3s ease;
+}
+
+.form-group select:hover {
+    border-color: #666666;
+    background: rgba(45, 45, 45, 0.7) url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") no-repeat right 1rem center;
+    background-size: 1.5em;
 }
 
 .form-group select option {

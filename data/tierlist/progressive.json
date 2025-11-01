@@ -21,6 +21,7 @@
         "nagu_evo",
         "sun_woo_evo",
         "claw_evo",
+        "karakuri_evo",
         "psycho_evo",
         "lao_evo",
         "reijin_evo"
@@ -41,7 +42,10 @@
       "class": "meta-support",
       "units": [
         "ai_evo",
+        "zero_evo",
         "rio",
+        "blur_evo",
+        "hidoh_evo",
         "ries_evo",
         "ukia",
         "koichy"
@@ -64,18 +68,19 @@
         "boo_evo",
         "toju_evo",
         "fat_hitman_evo",
-        "alfonz_evo",
-        "sweet_witch",
         "ryoma_evo",
+        "sweet_witch",
+        "alfonz_evo",
         "edwao_evo",
+        "ghost_san_evo",
         "jiro",
         "enmo_evo",
         "shaoten_evo",
         "haein_evo",
+        "ichi_evo",
         "ant_king_evo",
         "hie_evo",
-        "kensu",
-        "ichi_evo"
+        "kensu"
       ]
     },
     {

@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             nav.classList.toggle('nav-open');
             menuButton.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
         });
 
         // Close menu when clicking outside
@@ -153,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!nav.contains(e.target) && !menuButton.contains(e.target) && nav.classList.contains('nav-open')) {
                 nav.classList.remove('nav-open');
                 menuButton.classList.remove('active');
+                document.body.classList.remove('nav-open');
             }
         });
 
@@ -161,7 +163,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target.tagName === 'A') {
                 nav.classList.remove('nav-open');
                 menuButton.classList.remove('active');
+                document.body.classList.remove('nav-open');
             }
+        });
+
+        // Add modal state tracking
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.target.classList.contains('modal')) {
+                    const isModalOpen = mutation.target.style.display === 'flex';
+                    document.body.classList.toggle('modal-open', isModalOpen);
+                }
+            });
+        });
+
+        // Start observing all modals for display changes
+        document.querySelectorAll('.modal').forEach(modal => {
+            observer.observe(modal, {
+                attributes: true,
+                attributeFilter: ['style']
+            });
         });
     }
 });

@@ -7,7 +7,7 @@
             "image": "akuzo_evo.png",
             "rarity": "Crusader",
             "attributes": ["Hybrid"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Fire", "Water"],
             "placement_count": 3,
             "placement_cost": 2500,
@@ -66,35 +66,92 @@
             ]
         },
         {
+            "id": "dracula",
+            "name": "Dracula",
+            "alternatives": ["alucard"],
+            "image": "dracula.png",
+            "rarity": "Crusader",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Dark"],
+            "placement_count": 3,
+            "placement_cost": 2000,
+            "max_upgrade_cost": 123100,
+            "stats": {
+                "damage": 1501,
+                "hp": 0,
+                "spa": 5.5,
+                "range": 15,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "",
+                    "description": "",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "",
+                    "description": "",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": true,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": true
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "dracula_evo",
             "name": "Dracula (Vampire King)",
             "alternatives": ["alucard"],
             "image": "dracula_evo.png",
             "rarity": "Crusader",
             "attributes": ["Hybrid"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Dark"],
             "placement_count": 3,
             "placement_cost": 2000,
             "max_upgrade_cost": 123100,
             "stats": {
-                "damage": 2251,
+                "damage": 2252,
                 "hp": 0,
-                "spa": 5,
-                "range": 16.5,
+                "spa": 5.5,
+                "range": 15,
                 "yen": 0
             },
             "has_passive": true,
             "passive": [
                 {
                     "name": "Crimson Immortality",
-                    "description": "Attacks inflict bleed for 3 seconds, dealing 30% of this unit's damage over time.\nEvery time Dracula kills an enemy, he absorbs their blood, gaining +2.5% Damage and -1% Cooldown every 25 kills (max +25% Damage and -10% Cooldown).",
+                    "description": "",
                     "cooldown": 0,
                     "upgrade": 0
                 },
                 {
                     "name": "Blood Thirsty",
-                    "description": "Every enemy in Dracula's range takes 10% more damage from attacks.",
+                    "description": "Enemy in Dracula's range takes 10% more damage from attacks.",
                     "cooldown": 0,
                     "upgrade": 0
                 }
@@ -102,10 +159,61 @@
             "has_ability": true,
             "ability": {
                 "name": "Release Restraint Level Zero",
-                "description": "While active, Dracula releases his restraints, unleashing Level Zero for 30 seconds, gaining:\n+50% Damage\n-20% Cooldown\nWhile this ability is active, every enemy Dracula kills summons a Hound from the base (max 13).\nWhile a Hound is alive, Dracula's Cooldown is reduced by 10%.",
+                "description": "",
                 "cooldown": 120,
                 "upgrade": 10,
                 "global": true
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "brulo",
+            "name": "Brulo",
+            "alternatives": ["broly"],
+            "image": "brulo.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Air"],
+            "placement_count": 3,
+            "placement_cost": 2000,
+            "max_upgrade_cost": 45900,
+            "stats": {
+                "damage": 2188,
+                "hp": 0,
+                "spa": 7,
+                "range": 12,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Limitless Rage",
+                    "description": "Brulo gains +0.5% damage for every enemy inside his range (up to 15%).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
             },
             "traits": true,
             "best_traits_progressive": [
@@ -129,7 +237,7 @@
             "image": "brulo_evo.png",
             "rarity": "Secret",
             "attributes": ["Hybrid"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Air"],
             "placement_count": 3,
             "placement_cost": 2000,
@@ -180,13 +288,64 @@
             ]
         },
         {
+            "id": "igrith",
+            "name": "Igrith",
+            "alternatives": ["igris"],
+            "image": "igrith.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Rose"],
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 52500,
+            "stats": {
+                "damage": 1423,
+                "hp": 0,
+                "spa": 6,
+                "range": 21,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Loyal Blade",
+                    "description": "When Sun Woo is on the field, Igrith deals +15% bonus damage.\nFor every Shadow currently summoned, Igrith gains -5% Cooldown. (Capped at 3 Summons)",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "igrith_evo",
             "name": "Igrith (Blood Commander)",
             "alternatives": ["igris"],
             "image": "igrith_evo.png",
             "rarity": "Secret",
             "attributes": ["Hybrid"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Rose"],
             "placement_count": 3,
             "placement_cost": 1500,
@@ -237,22 +396,183 @@
             ]
         },
         {
+            "id": "karakuri",
+            "name": "Karakuri",
+            "alternatives": ["katakuri"],
+            "image": "karakuri.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical", "Magic"],
+            "elements": [],
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 43950,
+            "stats": {
+                "damage": 1478,
+                "hp": 0,
+                "spa": 7,
+                "range": 16,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Temporal Prediction",
+                    "description": "Karakuri gains +50% Damage at the start of every wave (cannot stack).\nIf this attack kills an enemy, his Cooldown is reduces by 10% for 10 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "karakuri_evo",
+            "name": "Karakuri (Mochi Prince)",
+            "alternatives": ["katakuri"],
+            "image": "karakuri_evo.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical", "Magic"],
+            "elements": [],
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 98500,
+            "stats": {
+                "damage": 2365,
+                "hp": 0,
+                "spa": 7,
+                "range": 16,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Temporal Prediction",
+                    "description": "Karakuri gains +50% Damage at the start of every wave (cannot stack).\nIf this attack kills an enemy, his Cooldown is reduces by 10% for 10 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Conqueror's Intimidation",
+                    "description": "If an enemy enters Karakuri's range while there is no other enemy in his range, Karakuri instantly attacks the enemy dealing 200% Damage.",
+                    "cooldown": 30,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": true,
+            "ability": {
+                "name": "King's Force",
+                "description": "After activating:\nApplies Stun to all enemies in range for 10 seconds (20 seconds cooldown).\nKarakuri's Cooldown reduces by 50% for 10 seconds.",
+                "cooldown": 100,
+                "upgrade": 0,
+                "global": true
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "kurimi",
+            "name": "Kurimi",
+            "alternatives": ["kurumi"],
+            "image": "kurimi.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["True"],
+            "elements": ["Fire"],
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 78500,
+            "stats": {
+                "damage": 1464,
+                "hp": 0,
+                "spa": 5,
+                "range": 15.5,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Shadow of Myself",
+                    "description": "Each attack spawns an additional Clone that attacks enemies with 30% of Kurimi's Damage, using her current move. These Clones can hit Flying Enemies and each Clone lasts 20 seconds (a maximum of 3 Clones can exist at a time).\nAfter Zaphkiel's Clockwork is activated, all active Clones instantly attack the strongest enemy in range with 50% of Kurimi's damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant",
+                "Biohazard"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant",
+                "Biohazard"
+            ],
+            "curse": true,
+            "best_curse": [
+                "Range",
+                "Damage"
+            ]
+        },
+        {
             "id": "kurimi_evo",
             "name": "Kurimi (Time Queen)",
             "alternatives": ["kurumi"],
             "image": "kurimi_evo.png",
             "rarity": "Secret",
             "attributes": ["Ground"],
-            "damage_type": "True",
+            "damage_type": ["True"],
             "elements": ["Fire"],
             "placement_count": 3,
             "placement_cost": 1500,
             "max_upgrade_cost": 78500,
             "stats": {
-                "damage": 1126,
+                "damage": 1464,
                 "hp": 0,
                 "spa": 5,
-                "range": 16.5,
+                "range": 15.5,
                 "yen": 0
             },
             "has_passive": true,
@@ -296,13 +616,64 @@
             ]
         },
         {
+            "id": "lao",
+            "name": "Lao",
+            "alternatives": ["law"],
+            "image": "lao.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Water"],
+            "placement_count": 3,
+            "placement_cost": 1600,
+            "max_upgrade_cost": 27550,
+            "stats": {
+                "damage": 1608,
+                "hp": 0,
+                "spa": 8.5,
+                "range": 18,
+                "yen": 0
+            },
+            "has_passive": false,
+            "passive": [
+                {
+                    "name": "",
+                    "description": "",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "lao_evo",
             "name": "Lao (Heart)",
             "alternatives": ["law"],
             "image": "lao_evo.png",
             "rarity": "Secret",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Water"],
             "placement_count": 3,
             "placement_cost": 1600,
@@ -347,13 +718,64 @@
             ]
         },
         {
+            "id": "nagu",
+            "name": "Nagu",
+            "alternatives": ["nagumo"],
+            "image": "nagu.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Dark"],
+            "placement_count": 3,
+            "placement_cost": 1800,
+            "max_upgrade_cost": 95200,
+            "stats": {
+                "damage": 1989,
+                "hp": 0,
+                "spa": 5,
+                "range": 18,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Deceptive Criticals",
+                    "description": "Nagu gains +25% Critical Chance and +50% Critical Damage",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "nagu_evo",
             "name": "Nagu (Blade Trickster)",
             "alternatives": ["nagumo"],
             "image": "nagu_evo.png",
             "rarity": "Secret",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Dark"],
             "placement_count": 3,
             "placement_cost": 1800,
@@ -410,13 +832,62 @@
             ]
         },
         {
+            "id": "reijin",
+            "name": "Reijin",
+            "alternatives": ["reigen"],
+            "image": "reijin.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Rose"],
+            "placement_count": 3,
+            "placement_cost": 3000,
+            "max_upgrade_cost": 0,
+            "stats": {
+                "damage": 1002,
+                "hp": 0,
+                "spa": 7,
+                "range": 14,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Secondhand Energy",
+                    "description": "Reijin gaing +2% Damage for every Magic Type unit in range. (up to +20%)",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader"
+            ],
+            "best_traits_infinite": [
+                "Crusader"
+            ],
+            "curse": true,
+            "best_curse": [
+                "Damage",
+                "Range"
+            ]
+        },
+        {
             "id": "reijin_evo",
             "name": "Reijin (Strongest Esper)",
             "alternatives": ["reigen"],
             "image": "reijin_evo.png",
             "rarity": "Secret",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Rose"],
             "placement_count": 3,
             "placement_cost": 3000,
@@ -465,28 +936,28 @@
             ]
         },
         {
-            "id": "shadow_evo",
-            "name": "Shadow (Atomic)",
+            "id": "shadow",
+            "name": "Shadow",
             "alternatives": ["cid"],
-            "image": "shadow_evo.png",
+            "image": "shadow.png",
             "rarity": "Secret",
-            "attributes": ["Hybrid"],
-            "damage_type": "True",
+            "attributes": ["Ground"],
+            "damage_type": ["True"],
             "elements": ["Dark"],
             "placement_count": 3,
             "placement_cost": 2200,
-            "max_upgrade_cost": 98300,
+            "max_upgrade_cost": 43800,
             "stats": {
-                "damage": 1689,
+                "damage": 2196,
                 "hp": 0,
                 "spa": 6,
                 "range": 15,
                 "yen": 0
             },
-            "has_passive": true,
+            "has_passive": false,
             "passive": [
                 {
-                    "name": "Each attack has a 22.5% chance to make the next attack deal +200% damage.",
+                    "name": "",
                     "description": "",
                     "cooldown": 0,
                     "upgrade": 0
@@ -518,13 +989,117 @@
             ]
         },
         {
+            "id": "shadow_evo",
+            "name": "Shadow (Atomic)",
+            "alternatives": ["cid"],
+            "image": "shadow_evo.png",
+            "rarity": "Secret",
+            "attributes": ["Hybrid"],
+            "damage_type": ["True"],
+            "elements": ["Dark"],
+            "placement_count": 3,
+            "placement_cost": 2200,
+            "max_upgrade_cost": 98300,
+            "stats": {
+                "damage": 2196,
+                "hp": 0,
+                "spa": 6,
+                "range": 15,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Abyss Grasp",
+                    "description": "Each attack has a 22.5% chance to make the next attack deal +200% damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant",
+                "Biohazard"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant",
+                "Biohazard"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "sun_woo",
+            "name": "Sun Woo",
+            "alternatives": ["sung jinwoo", "sung jin woo", "sung jin-woo", "sjw"],
+            "image": "sun_woo.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Dark"],
+            "placement_count": 3,
+            "placement_cost": 1750,
+            "max_upgrade_cost": 53700,
+            "stats": {
+                "damage": 1201,
+                "hp": 0,
+                "spa": 6,
+                "range": 17,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Shadow Extraction",
+                    "description": "When this unit gets a takedown, there is a 15% chance to extract a Shadow. A maximum of 2 Shadows can exist at a time. If the cap is reached, additional Shadows will not spawn until one disappears.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": true,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "sun_woo_evo",
             "name": "Sun Woo (System)",
             "alternatives": ["sung jinwoo", "sung jin woo", "sung jin-woo", "sjw"],
             "image": "sun_woo_evo.png",
             "rarity": "Secret",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Dark"],
             "placement_count": 3,
             "placement_cost": 1750,
@@ -575,13 +1150,64 @@
             ]
         },
         {
+            "id": "tengin",
+            "name": "Tengin",
+            "alternatives": ["tengen"],
+            "image": "tengin.png",
+            "rarity": "Secret",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Lightning"],
+            "placement_count": 3,
+            "placement_cost": 1750,
+            "max_upgrade_cost": 47450,
+            "stats": {
+                "damage": 1945,
+                "hp": 0,
+                "spa": 6,
+                "range": 15,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Flashy Duelist",
+                    "description": "Whenever an enemy dies within Tengin's range, he gains +10% Critical Chance (cannot stack).\nThis bonus lasts until a Critical Hit occurs.\nIf Tengin attacks without landing a Critical Hit, he gains +20% Critical Chance per hit until he crits.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 1,
+                "upgrade": 8,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "tengin_evo",
             "name": "Tengin (God of Echoes)",
             "alternatives": ["tengen"],
             "image": "tengin_evo.png",
             "rarity": "Secret",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Lightning"],
             "placement_count": 3,
             "placement_cost": 1750,
@@ -638,14 +1264,177 @@
             ]
         },
         {
+            "id": "zero",
+            "name": "Zero",
+            "alternatives": ["lelouch", "lulu"],
+            "image": "zero.png",
+            "rarity": "Secret",
+            "attributes": ["Hybrid"],
+            "damage_type": ["Physical"],
+            "elements": ["Lightning"],
+            "placement_count": 2,
+            "placement_cost": 2200,
+            "max_upgrade_cost": 29450,
+            "stats": {
+                "damage": 1501,
+                "hp": 0,
+                "spa": 7,
+                "range": 14.5,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Crown of Rebellion",
+                    "description": "All units in range gain +10% Damage. (cannot stack)",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "zero_evo",
+            "name": "Zero (True Emperor)",
+            "alternatives": ["lelouch"],
+            "image": "zero_evo.png",
+            "rarity": "Secret",
+            "attributes": ["Hybrid"],
+            "damage_type": ["Physical"],
+            "elements": ["Lightning"],
+            "placement_count": 2,
+            "placement_cost": 2200,
+            "max_upgrade_cost": 165950,
+            "stats": {
+                "damage": 1877,
+                "hp": 0,
+                "spa": 7,
+                "range": 14.5,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Crown of Rebellion",
+                    "description": "All units in range gain +10% Damage. (cannot stack)",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Imperial Chessboard",
+                    "description": "Zero can assign 3 Chess Pieces to units in his range (a maximum of 2 pieces can be assigned to the same unit).\nThere is a 60 second cooldown before you can re-assing a piece.\n\nQueen\nGrants -10% Cooldown and +20% Range\nKnight\nGrants +20% Damage\nPawn\nGrants +5% Damage, -5% Cooldown and +5% Range\nAfter defeating 50 emenies, this unit's Pawn Piece promotes into a Queen Piece, granting all of Queen Piece's effects for 15 seconds. (If Queen Piece is already assigned to this unit, the Pawn Piece does not promote to Queen Piece)\n\nIf all pieces are assigned, Zero gains +10% Damage, -10% Cooldown and +10% Range.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Knight of Rebellion",
+                    "description": "Spawns Dark Knight every 100 seconds.\nDark Knight's Health is equal to 1000% of Zero's Damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "Command: Nuke",
+                "description": "Zero orders his Dark Knight to unleash its full power, flying across the map and obliterating everything in its path. Dealing 2000% of Zero's Damage to every enemy in the map.\nCan only be used once per match.",
+                "cooldown": 0,
+                "upgrade": 10,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "ai",
+            "name": "AI",
+            "alternatives": ["hoshino", "oshi"],
+            "image": "ai.png",
+            "rarity": "Mythic",
+            "attributes": ["Buff"],
+            "damage_type": ["Magic"],
+            "elements": [],
+            "placement_count": 1,
+            "placement_cost": 800,
+            "max_upgrade_cost": 6200,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": false,
+            "passive": [
+                {
+                    "name": "",
+                    "description": "",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Gilded"
+            ],
+            "best_traits_infinite": [
+                "Gilded"
+            ],
+            "curse": false,
+            "best_curse": [
+                "",
+                ""
+            ]
+        },
+        {
             "id": "ai_evo",
             "name": "AI (Idol)",
-            "alternatives": ["oshi"],
+            "alternatives": ["hoshino", "oshi"],
             "image": "ai_evo.png",
             "rarity": "Mythic",
-            "attributes": ["Ground", "Buff"],
-            "damage_type": "Magic",
-            "elements": [""],
+            "attributes": ["Buff"],
+            "damage_type": ["Magic"],
+            "elements": [],
             "placement_count": 1,
             "placement_cost": 800,
             "max_upgrade_cost": 12700,
@@ -675,17 +1464,119 @@
             },
             "traits": true,
             "best_traits_progressive": [
-                "",
-                ""
+                "Gilded"
             ],
             "best_traits_infinite": [
-                "",
-                ""
+                "Gilded"
             ],
-            "curse": true,
+            "curse": false,
             "best_curse": [
                 "",
                 ""
+            ]
+        },
+        {
+            "id": "akuzo",
+            "name": "Akuzo",
+            "alternatives": ["akaza"],
+            "image": "akuzo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Water"],
+            "placement_count": 3,
+            "placement_cost": 1600,
+            "max_upgrade_cost": 25200,
+            "stats": {
+                "damage": 1501,
+                "hp": 0,
+                "spa": 7,
+                "range": 15,
+                "yen": 0
+            },
+            "has_passive": false,
+            "passive": [
+                {
+                    "name": "",
+                    "description": "",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Biohazard",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Biohazard",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "alfonz",
+            "name": "Alfonz",
+            "alternatives": ["alphonse"],
+            "image": "alfonz.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Air"],
+            "placement_count": 4,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 21350,
+            "stats": {
+                "damage": 1426,
+                "hp": 0,
+                "spa": 7.5,
+                "range": 15,
+                "yen": 0
+            },
+            "has_passive": false,
+            "passive": [
+                {
+                    "name": "",
+                    "description": "",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
             ]
         },
         {
@@ -695,16 +1586,16 @@
             "image": "alfonz_evo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Air"],
-            "placement_count": 0,
-            "placement_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1500,
             "max_upgrade_cost": 0,
             "stats": {
-                "damage": 0,
+                "damage": 1426,
                 "hp": 0,
-                "spa": 0,
-                "range": 0,
+                "spa": 7.5,
+                "range": 15,
                 "yen": 0
             },
             "has_passive": true,
@@ -746,22 +1637,73 @@
             ]
         },
         {
+            "id": "ant_king",
+            "name": "Ant King",
+            "alternatives": ["beru"],
+            "image": "ant_king.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Lightning"],
+            "placement_count": 3,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 43600,
+            "stats": {
+                "damage": 850,
+                "hp": 0,
+                "spa": 4,
+                "range": 18,
+                "yen": 0
+            },
+            "has_passive": false,
+            "passive": [
+                {
+                    "name": "Created to Be King",
+                    "description": "If neither Igrith nor Sun Woo is withing Ant King's range, Ant King gains +15% Damage and +7.5% SPA.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "ant_king_evo",
             "name": "Ant King (Shadow Fang)",
             "alternatives": ["beru"],
             "image": "ant_king_evo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Lightning"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 83600,
             "stats": {
-                "damage": 0,
+                "damage": 1276,
                 "hp": 0,
-                "spa": 0,
-                "range": 0,
+                "spa": 4,
+                "range": 18,
                 "yen": 0
             },
             "has_passive": false,
@@ -809,16 +1751,179 @@
             ]
         },
         {
+            "id": "blur",
+            "name": "Blur",
+            "alternatives": ["blair"],
+            "image": "blur.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Dark"],
+            "placement_count": 4,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 41600,
+            "stats": {
+                "damage": 901,
+                "hp": 0,
+                "spa": 7.5,
+                "range": 17,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Cat's Charm",
+                    "description": "Enemies hit by Blur's attacks are bewitched, taking 10% more damage from all sources for 3 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Radiant",
+                "Crusader",
+                "Overdrive"
+            ],
+            "best_traits_infinite": [
+                "Radiant",
+                "Crusader",
+                "Overdrive"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Damage"
+            ]
+        },
+        {
+            "id": "blur_evo",
+            "name": "Blur (Charming Cat)",
+            "alternatives": ["blair"],
+            "image": "blur_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Dark"],
+            "placement_count": 4,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 72100,
+            "stats": {
+                "damage": 1126,
+                "hp": 0,
+                "spa": 7.5,
+                "range": 17,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Cat's Charm",
+                    "description": "Enemies hit by Blur's attacks are bewitched, taking 10% more damage from all sources for 3 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Charm Spark",
+                    "description": "Attacks apply 50% Slow to enemies for 4 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Radiant",
+                "Crusader",
+                "Overdrive"
+            ],
+            "best_traits_infinite": [
+                "Radiant",
+                "Crusader",
+                "Overdrive"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Damage"
+            ]
+        },
+        {
+            "id": "bones",
+            "name": "Bones",
+            "alternatives": ["brook"],
+            "image": "bones.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Lightning"],
+            "placement_count": 3,
+            "placement_cost": 1600,
+            "max_upgrade_cost": 37250,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Soul Drain",
+                    "description": "Bones gains +0.1% Damage per kill (+50% max).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Radiant",
+                "Crusader"
+            ],
+            "best_traits_infinite": [
+                "Radiant",
+                "Crusader"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Damage"
+            ]
+        },
+        {
             "id": "bones_evo",
             "name": "Bones (Soul Guitarist)",
             "alternatives": ["brook"],
             "image": "bones_evo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Lightning"],
-            "placement_count": 0,
-            "placement_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1600,
             "max_upgrade_cost": 0,
             "stats": {
                 "damage": 0,
@@ -872,17 +1977,17 @@
             ]
         },
         {
-            "id": "boo_evo",
-            "name": "Boo (Ultimate)",
+            "id": "boo",
+            "name": "Boo",
             "alternatives": ["buu"],
-            "image": "boo_evo.png",
+            "image": "boo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Rose"],
             "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_cost": 1800,
+            "max_upgrade_cost": 51300,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -929,17 +2034,74 @@
             ]
         },
         {
-            "id": "chonin_evo",
-            "name": "Chonin (Flame Master)",
+            "id": "boo_evo",
+            "name": "Boo (Ultimate)",
+            "alternatives": ["buu"],
+            "image": "boo_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Rose"],
+            "placement_count": 0,
+            "placement_cost": 1800,
+            "max_upgrade_cost": 103250,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Absorption",
+                    "description": "When an enemy dies within this unit's range, Boo gains +5% damage for 10 seconds (up to +50%).\nIf the enemy is a Boss, gain +50% damage instead (ignores the cap).\nAlso gains +50% damage when a Boss evolves within range (ignores the cap).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Absorption Mix",
+                    "description": "Boo absorbs in a special bar by killing enemies.\nOnce the bar reaches 50,",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "chonin",
+            "name": "Chonin",
             "alternatives": ["choi jongin", "choi jong in", "choi jong-in"],
-            "image": "chonin_evo.png",
+            "image": "chonin.png",
             "rarity": "Mythic",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Fire"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 33300,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -992,17 +2154,80 @@
             ]
         },
         {
-            "id": "claw_evo",
-            "name": "Claw (Boss)",
+            "id": "chonin_evo",
+            "name": "Chonin (Flame Master)",
+            "alternatives": ["choi jongin", "choi jong in", "choi jong-in"],
+            "image": "chonin_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Hill"],
+            "damage_type": ["Magic"],
+            "elements": ["Fire"],
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 57800,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Eternal Blazy",
+                    "description": "Attacks inflict Burn equal to 30% of this unit's damage over 3 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Scorching Momentum",
+                    "description": "If the enemy is already Burning, attacks deal an additional 30% damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Frostfire Surge",
+                    "description": "When attacking an enemy that is currently Frozen, the hit deals +150% bonus damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "claw",
+            "name": "Claw",
             "alternatives": [""],
-            "image": "claw_evo.png",
+            "image": "claw.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Fire"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1300,
+            "max_upgrade_cost": 48300,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1055,17 +2280,80 @@
             ]
         },
         {
-            "id": "daume_evo",
-            "name": "Daume (Crimson Obi)",
+            "id": "claw_evo",
+            "name": "Claw (Boss)",
+            "alternatives": [""],
+            "image": "claw_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Fire"],
+            "placement_count": 3,
+            "placement_cost": 1300,
+            "max_upgrade_cost": 90800,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Calculated Dominance",
+                    "description": "The first attack against each enemy deals -30% Damage.\nAll attacks after that deals +30% Damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Crushing Authority",
+                    "description": "While this unit is on the field, all units in range lose 10% Damage (cannot stack).\nGains +50% Damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Shatterpoint",
+                    "description": "Claw's attacks ignore enemy shields.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "daume",
+            "name": "Daume",
             "alternatives": ["daki"],
-            "image": "daume_evo.png",
+            "image": "daume.png",
             "rarity": "Mythic",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Rose"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 32500,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1118,16 +2406,136 @@
             ]
         },
         {
+            "id": "daume_evo",
+            "name": "Daume (Crimson Obi)",
+            "alternatives": ["daki"],
+            "image": "daume_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Hill"],
+            "damage_type": ["Magic"],
+            "elements": ["Rose"],
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 59000,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Crimson Threads",
+                    "description": "Attacks inflict Bleed for 4 seconds, dealing 40% of this unit's damage over time.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Elegant Execution",
+                    "description": "When an enemy dies while affected by Bleed within her range, Daume gains +5% Damage and +5% Range for 10s.\nStacks up to 3 times.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Cruel Authority",
+                    "description": "If more than 15 enemies are within her range, Daume's Damage is increased by 40%.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "edwao",
+            "name": "Edwao",
+            "alternatives": ["edward"],
+            "image": "edwao.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Lightning"],
+            "placement_count": 3,
+            "placement_cost": 1000,
+            "max_upgrade_cost": 17350,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Steel Brotherhood",
+                    "description": "Edwao gains +10% Range and +10% Damage.\nIf Alfonz is within this unit's range, Edwao gains an extra +20% Damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Alchemic Genius",
+                    "description": "For every 20 seconds spent on the field, Edwao's Damage increases by +2% and his Cooldown decreases by -1% (up to +20% Damage and -10% SPA).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "edwao_evo",
             "name": "Edwao (Fullmeta)",
             "alternatives": ["edward"],
             "image": "edwao_evo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Lightning"],
-            "placement_count": 0,
-            "placement_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1000,
             "max_upgrade_cost": 0,
             "stats": {
                 "damage": 0,
@@ -1175,17 +2583,17 @@
             ]
         },
         {
-            "id": "enmo_evo",
-            "name": "Enmo (Nightmare)",
+            "id": "enmo",
+            "name": "Enmo",
             "alternatives": ["enmu"],
-            "image": "enmo_evo.png",
+            "image": "enmo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Dark"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 43650,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1232,17 +2640,74 @@
             ]
         },
         {
-            "id": "enol_evo",
-            "name": "Enol (Drums)",
-            "alternatives": ["enel"],
-            "image": "enol_evo.png",
+            "id": "enmo_evo",
+            "name": "Enmo (Nightmare)",
+            "alternatives": ["enmu"],
+            "image": "enmo_evo.png",
             "rarity": "Mythic",
-            "attributes": ["Hybrid"],
-            "damage_type": "Magic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Dark"],
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 69650,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Sleep Strike",
+                    "description": "Every attack applies Sleep for 2 seconds. (Each enemy has a 10 second cooldown before they can be applied Sleep again.)\nEnemies affected by Sleep take +20% damage from Enmo's attacks.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Sleep Deprivation",
+                    "description": "Enemies that die while affected by Sleep boosts Enmo's damage by 1% (max 15%) lasting 4 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "enol",
+            "name": "Enol",
+            "alternatives": ["enel"],
+            "image": "enol.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
             "elements": ["Lightning"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 25900,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1289,17 +2754,74 @@
             ]
         },
         {
-            "id": "fat_hitman_evo",
-            "name": "Fat Hitman (Serious)",
+            "id": "enol_evo",
+            "name": "Enol (Drums)",
+            "alternatives": ["enel"],
+            "image": "enol_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Hybrid"],
+            "damage_type": ["Magic"],
+            "elements": ["Lightning"],
+            "placement_count": 4,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 64900,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "High Voltage",
+                    "description": "Enol builds 1 charge with every attack (max of 10 charges).\nUpon reaching 10 charges Enol enters an Overcharged state for 40 seconds.\nHe gains +50% damage, +10% attack speed, and +15% range.\nAfter Overcharged ends the charges reset to 0 and they cannot be regenerated for 30 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "God's Punishment",
+                    "description": "Enol deals +20% bonus damage to enemies under control effects (stun, freeze, slow, etc).\nIf an enemy dies while under any control effect, Enol's Cooldown reduces by 3% (up to 12% max).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "fat_hitman",
+            "name": "Fat Hitman",
             "alternatives": ["sakamoto"],
-            "image": "fat_hitman_evo.png",
+            "image": "fat_hitman.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Light"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 58500,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1346,17 +2868,74 @@
             ]
         },
         {
-            "id": "getu_evo",
-            "name": "Getu (Master of Curses)",
-            "alternatives": ["geto"],
-            "image": "getu_evo.png",
+            "id": "fat_hitman_evo",
+            "name": "Fat Hitman (Serious)",
+            "alternatives": ["sakamoto"],
+            "image": "fat_hitman_evo.png",
             "rarity": "Mythic",
-            "attributes": ["Summon"],
-            "damage_type": "Magic",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Light"],
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 93500,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": false,
+            "passive": [
+                {
+                    "name": "Weight Of Power",
+                    "description": "With each attack, Fat Hitman burns away his fatigue.\nAfter 25 attacks, transforms into Half-Slim Form:\n+50% Damage\n-10% Cooldown\nAfter 50 attacks, transforms into Slim Form:\n+100% Damage\n-20% Cooldown",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Hidden Assassin",
+                    "description": "After each attack, Fat Hitman has a 10% chance to attack again.\nIf this attack kills an enemy, his next attack deals +10% damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "getu",
+            "name": "Getu",
+            "alternatives": ["geto"],
+            "image": "getu.png",
+            "rarity": "Mythic",
+            "attributes": ["Summon", "Hybrid"],
+            "damage_type": ["Magic"],
             "elements": ["Dark"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 1,
+            "placement_cost": 3000,
+            "max_upgrade_cost": 28000,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1399,17 +2978,184 @@
             ]
         },
         {
-            "id": "giu_evo",
-            "name": "Giu (Silent Flow)",
-            "alternatives": ["giyuu"],
-            "image": "giu_evo.png",
+            "id": "getu_evo",
+            "name": "Getu (Master of Curses)",
+            "alternatives": ["geto"],
+            "image": "getu_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Summon", "Hybrid"],
+            "damage_type": ["Magic"],
+            "elements": ["Dark"],
+            "placement_count": 1,
+            "placement_cost": 3000,
+            "max_upgrade_cost": 163000,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Curse's Commander",
+                    "description": "If 6 or more curses are on the field, Getu gains a +10% health boost.\nAdditionally, each time a summoned curse kills an enemy, Getu gains +0.1% health boost stacking up to a maximum of +10%.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant",
+                "Overdrive"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant",
+                "Overdrive"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "ghost_san",
+            "name": "Ghost-san",
+            "alternatives": ["ghost san", "ghostsan", "hanako-kun", "hanako kun", "hanakokun"],
+            "image": "ghost_san.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Magic"],
+            "elements": ["Air"],
+            "placement_count": 3,
+            "placement_cost": 1250,
+            "max_upgrade_cost": 40700,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Soul Harvest",
+                    "description": "For each kill, Ghost-san gains +0.2% Damage for 60 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "ghost_san_evo",
+            "name": "Ghost-san (Bounded)",
+            "alternatives": ["ghost san", "ghostsan", "hanako-kun", "hanako kun", "hanakokun"],
+            "image": "ghost_san_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Air"],
+            "placement_count": 3,
+            "placement_cost": 1250,
+            "max_upgrade_cost": 79200,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Soul Harvest",
+                    "description": "For each kill, Ghost-san gains +0.2% Damage for 60 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Spiritual Flame",
+                    "description": "Attacks inflict Burn for 5 seconds, dealing 50% of this unit's damage over time",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Spectral Ritual",
+                    "description": "After killing 300 enemies, Ghost-san summons a Spirit beside him that mimics his attacks with 50% of his damage.\nWhen the Spirit summoned, Ghost-san gains +33.3% Damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "giu",
+            "name": "Giu",
+            "alternatives": ["giyuu"],
+            "image": "giu.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
             "elements": ["Water"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 49200,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1454,17 +3200,72 @@
             ]
         },
         {
-            "id": "goju_evo",
-            "name": "Goju (Supreme)",
-            "alternatives": ["gojo"],
-            "image": "goju_evo.png",
+            "id": "giu_evo",
+            "name": "Giu (Silent Flow)",
+            "alternatives": ["giyuu"],
+            "image": "giu_evo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Physical"],
             "elements": ["Water"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 87700,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Tidal Reflex",
+                    "description": "If an enemy has entered Giu's range within the last 5 seconds, Giu's next attack deals +20% Damage against that enemy.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Tide of Strikes",
+                    "description": "Each time Giu kills an enemy while Flowing Calm is active, he gains +20% Damage for 20 seconds (refreshes with each kill) and +10% chance to immediately attack the strongest enemy using a random skill of his own.",
+                    "cooldown": 0,
+                    "upgrade": 9
+                }
+            ],
+            "has_ability": true,
+            "ability": {
+                "name": "Flowing Calm",
+                "description": "For 10 seconds, Giu enters a state of perfect focus, emitting a steady pulse every second that:\n- Slows enemies by 50% for 2.9 seconds (5.9 Second Cooldown)\n- Deals 10% of Giu's damage\n- Hits flying enemies",
+                "cooldown": 30,
+                "upgrade": 8,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "Range",
+                "Damage"
+            ]
+        },
+        {
+            "id": "goju",
+            "name": "Goju",
+            "alternatives": ["gojo"],
+            "image": "goju.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Water"],
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 40000,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1505,17 +3306,68 @@
             ]
         },
         {
-            "id": "goko_evo",
-            "name": "Goko (Perfected Super III)",
+            "id": "goju_evo",
+            "name": "Goju (Supreme)",
+            "alternatives": ["gojo"],
+            "image": "goju_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Water"],
+            "placement_count": 3,
+            "placement_cost": 1500,
+            "max_upgrade_cost": 98500,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": false,
+            "passive": [
+                {
+                    "name": "",
+                    "description": "",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": true,
+            "ability": {
+                "name": "Unlimited Void",
+                "description": "Freezes all enemies on the map for 8.5 seconds.",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "goko",
+            "name": "Goko",
             "alternatives": ["goku"],
-            "image": "goko_evo.png",
+            "image": "goko.png",
             "rarity": "Mythic",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Light"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 5,
+            "placement_cost": 950,
+            "max_upgrade_cost": 33700,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1568,17 +3420,80 @@
             ]
         },
         {
-            "id": "golden_spirit_evo",
-            "name": "Golden Spirit (Divine)",
-            "alternatives": ["dimple"],
-            "image": "golden_spirit_evo.png",
+            "id": "goko_evo",
+            "name": "Goko (Perfected Super III)",
+            "alternatives": ["goku"],
+            "image": "goko_evo.png",
             "rarity": "Mythic",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Light"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 5,
+            "placement_cost": 950,
+            "max_upgrade_cost": 53200,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Saiyan Precision",
+                    "description": "Goko deals +35% damage against flying enemies.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Kame Impact",
+                    "description": "Every 5 attacks, Goko charges a powered strike that deals +50% bonus damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Primal Power",
+                    "description": "For every 10 enemies defeated, Goko gains +5% damage and +3% crit chance (max +25% damage, +15% crit).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "golden_spirit",
+            "name": "Golden Spirit",
+            "alternatives": ["dimple"],
+            "image": "golden_spirit.png",
+            "rarity": "Mythic",
+            "attributes": ["Hill"],
+            "damage_type": ["Magic"],
+            "elements": ["Light"],
+            "placement_count": 3,
+            "placement_cost": 1800,
+            "max_upgrade_cost": 39050,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1625,17 +3540,74 @@
             ]
         },
         {
-            "id": "haein_evo",
-            "name": "Haein (Sword Queen)",
+            "id": "golden_spirit_evo",
+            "name": "Golden Spirit (Divine)",
+            "alternatives": ["dimple"],
+            "image": "golden_spirit_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Hill"],
+            "damage_type": ["Magic"],
+            "elements": ["Light"],
+            "placement_count": 3,
+            "placement_cost": 1800,
+            "max_upgrade_cost": 97550,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Divine Strike",
+                    "description": "Whenever an enemy enters Golden Spirit's range, they take damage equal to 50% of this unit's damage (once per enemy).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Golden Judgement",
+                    "description": "For each second an enemy remains within Golden Spirit' s range, he deals an extra 2.5% Damage to that enemy when he attacks (up to +25%).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "haein",
+            "name": "Haein",
             "alternatives": ["cha haein", "cha hae in", "cha hae-in", "cha in"],
-            "image": "haein_evo.png",
+            "image": "haein.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Light"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1600,
+            "max_upgrade_cost": 29900,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1682,17 +3654,74 @@
             ]
         },
         {
-            "id": "heisou_evo",
-            "name": "Heisou (Bird Sniper)",
+            "id": "haein_evo",
+            "name": "Haein (Sword Queen)",
+            "alternatives": ["cha haein", "cha hae in", "cha hae-in", "cha in"],
+            "image": "haein_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Light"],
+            "placement_count": 4,
+            "placement_cost": 1600,
+            "max_upgrade_cost": 61400,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Radiant Focus",
+                    "description": "Every 30 seconds, Haein marks a random enemy on the map.\nShe deals +40% damage to marked enemies.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Reflected Grace",
+                    "description": "Every 5th attack, Haein deals +180% damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "heisou",
+            "name": "Heisou",
             "alternatives": [""],
-            "image": "heisou_evo.png",
+            "image": "heisou.png",
             "rarity": "Mythic",
             "attributes": ["Hill"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Air"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 33200,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1745,17 +3774,182 @@
             ]
         },
         {
-            "id": "hie_evo",
-            "name": "Hie (Black Dragon)",
+            "id": "heisou_evo",
+            "name": "Heisou (Bird Sniper)",
             "alternatives": [""],
-            "image": "hie_evo.png",
+            "image": "heisou_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Hill"],
+            "damage_type": ["Physical"],
+            "elements": ["Air"],
+            "placement_count": 3,
+            "placement_cost": 1400,
+            "max_upgrade_cost": 73600,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Sharp-Eyed Scout",
+                    "description": "Every 50 seconds, Heisou's bird grants him +10% Damage and +1000% Range for 15 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Rhythm Flow",
+                    "description": "Every time he attacks, he gains +5% damage boost ( capped at 20%) that last 10s but the duration gets reset to 10s everytime it attacks again.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Deadliest Sniper",
+                    "description": "Heisou has 15% Chance to crit the enemy. He always crits the 5th attack.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "hidoh",
+            "name": "Hidoh",
+            "alternatives": ["hidan"],
+            "image": "hidoh.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Physical"],
+            "elements": ["Fire"],
+            "placement_count": 3,
+            "placement_cost": 1650,
+            "max_upgrade_cost": 24600,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Bloodlust",
+                    "description": "While this unit is on the field, any unit within Hidoh's range deals 100% more Bleed Damage (cannot stack).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "hidoh_evo",
+            "name": "Hidoh (Deathless Reaper)",
+            "alternatives": ["hidan"],
+            "image": "hidoh_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Fire"],
+            "placement_count": 3,
+            "placement_cost": 1650,
+            "max_upgrade_cost": 88700,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Bloodlust",
+                    "description": "While this unit is on the field, any unit within Hidoh's range deals 100% more Bleed Damage (cannot stack).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": true,
+            "ability": {
+                "name": "Reaper Unleashed",
+                "description": "After activation, the reaper awakens, dealing 300% damage to all enemies in his range.",
+                "cooldown": 20,
+                "upgrade": 6,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "hie",
+            "name": "Hie",
+            "alternatives": [""],
+            "image": "hie.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
             "elements": ["Dark"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 22800,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1802,17 +3996,131 @@
             ]
         },
         {
+            "id": "hie_evo",
+            "name": "Hie (Black Dragon)",
+            "alternatives": [""],
+            "image": "hie_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Dark"],
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 55000,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Demonic Precision",
+                    "description": "If Hie attacks the same target three times in a row, the third hit is guaranteed to critical.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Cold-Blooded Focus",
+                    "description": "Hie deals +30% damage to enemies below 50% HP.\nKilling one grants -5% Attack Speed for 6 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "ichi",
+            "name": "Ichi",
+            "alternatives": ["ichigo"],
+            "image": "ichi.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Dark"],
+            "placement_count": 4,
+            "placement_cost": 1650,
+            "max_upgrade_cost": 37500,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Soul Bind",
+                    "description": "Each attack applies 1 Soul Bind stack to the target (max 3 stacks).\nUpon reaching 3 stacks, Ichi's next strike detonates them, dealing true damage equal to 175% of Ichi's damage.\nDetonation only occurs once per target per full stack cycle.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Hollow Fury",
+                    "description": "Detonating Soul Bind activates Hollow Fury for 8 seconds.\nWhile active, Ichi gains:\n+20% Attack Speed\n+10% Critical Chance\nEach kill during Hollow Fury extends its duration by 2 seconds, up to a maximum of 12 seconds total.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "ichi_evo",
             "name": "Ichi (Dusk)",
             "alternatives": ["ichigo"],
             "image": "ichi_evo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Dark"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1650,
+            "max_upgrade_cost": 68500,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -1865,7 +4173,7 @@
             "image": "jiro.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Fire"],
             "placement_count": 0,
             "placement_cost": 0,
@@ -1922,7 +4230,7 @@
             "image": "kensu.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Air"],
             "placement_count": 0,
             "placement_cost": 0,
@@ -1973,11 +4281,11 @@
             "image": "king.png",
             "rarity": "Mythic",
             "attributes": ["Hybrid"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Fire", "Air", "Rose"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 2000,
+            "max_upgrade_cost": 59600,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -2024,17 +4332,17 @@
             ]
         },
         {
-            "id": "psycho_evo",
-            "name": "Psycho (???%)",
+            "id": "psycho",
+            "name": "Psycho",
             "alternatives": ["mob"],
-            "image": "psycho_evo.png",
+            "image": "psycho.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Lightning"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1600,
+            "max_upgrade_cost": 34500,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -2081,17 +4389,125 @@
             ]
         },
         {
+            "id": "psycho_evo",
+            "name": "Psycho (???%)",
+            "alternatives": ["mob"],
+            "image": "psycho_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Lightning"],
+            "placement_count": 3,
+            "placement_cost": 1600,
+            "max_upgrade_cost": 79500,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Psychic Aura",
+                    "description": "Enemies within Psycho's range are constantly afflicted by Psychic Aura, taking 1% of his damage every second.\nIf an enemy dies from this effect, Psycho permanently gains +1% Damage and +0.5% Range, up to a maximum of +15% Damage and +7.5% Range.\nWhile ???% is active, Psychic Aura deals 2% damage per second instead.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Emotional Spectrum",
+                    "description": "Psycho has an Emotion Meter. This meter goes up by 0. 5% every time Psycho kills an enemy (max 100%).\nWhen the Emotion Meter reaches 100%, use ???% Ability to choose an emotion that will consume Psycho.\nAnger: Psycho gains +50% Damage.\nSadness: Psycho's attacks can hit Flying Enemies.\nFriendship: Psycho buffs Damage of all units by 20% (cannot stack with another Psycho).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": true,
+            "ability": {
+                "name": "???%",
+                "description": "After activating for the first time, the Emotion Meter transforms into ??? Meter.\nThis ability can be toggled on and off at any time. When Inactive:\nThe Meter fills by 2.5% every second (max 200%).\nWhen Active:\nPsycho's cooldown gets reduced by 50%.\nThe Meter drains by 5% every second.\nPsycho gains +20% Range while the ??? Meter is at 200%.",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Radiant",
+                "Crusader"
+            ],
+            "best_traits_infinite": [
+                "Radiant",
+                "Crusader"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "ries",
+            "name": "Ries",
+            "alternatives": ["rias"],
+            "image": "ries.png",
+            "rarity": "Mythic",
+            "attributes": ["Hill"],
+            "damage_type": ["Magic"],
+            "elements": ["Fire"],
+            "placement_count": 5,
+            "placement_cost": 1100,
+            "max_upgrade_cost": 16850,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Demonic Nobility",
+                    "description": "All Fire Element units in range gain +10% Damage and +15% Range.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "ries_evo",
             "name": "Ries (Crimson Princess)",
             "alternatives": ["rias"],
             "image": "ries_evo.png",
             "rarity": "Mythic",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Fire"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 5,
+            "placement_cost": 1100,
+            "max_upgrade_cost": 43900,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -2144,11 +4560,11 @@
             "image": "rio.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Air"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1300,
+            "max_upgrade_cost": 56850,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -2197,17 +4613,68 @@
             ]
         },
         {
+            "id": "ryoma",
+            "name": "Ryoma",
+            "alternatives": ["ryuma"],
+            "image": "ryoma.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Air"],
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 27550,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Divine Duelist",
+                    "description": "Each consecutive attack against the same enemy deals +5% More Damage (max +50%).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "ryoma_evo",
             "name": "Ryoma (Sword God)",
             "alternatives": ["ryuma"],
             "image": "ryoma_evo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Air"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 49350,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -2254,17 +4721,17 @@
             ]
         },
         {
-            "id": "shaoten_evo",
-            "name": "Shaoten (Dizzy)",
+            "id": "shaoten",
+            "name": "Shaoten",
             "alternatives": ["shaotang"],
-            "image": "shaoten_evo.png",
+            "image": "shaoten.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Rose"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 39500,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -2311,17 +4778,74 @@
             ]
         },
         {
-            "id": "shunks_evo",
-            "name": "Shunks (Haki)",
-            "alternatives": ["shanks"],
-            "image": "shunks_evo.png",
+            "id": "shaoten_evo",
+            "name": "Shaoten (Dizzy)",
+            "alternatives": ["shaotang"],
+            "image": "shaoten_evo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
+            "elements": ["Rose"],
+            "placement_count": 4,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 68800,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Dizzy Flow",
+                    "description": "Each attack grants 1 Drink Stack (max 10 stacks).\nAt 3-10 stacks, she can consume her drink to become Dizzy.\nEach stack grants 2.5 seconds of Dizzy Mode.\nConsuming the maximum 10 stacks grants an additional +50% Dizzy Mode duration.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Dizzy Mode",
+                    "description": "While dizzy she:\nCannot gain Drink Stack.\nGains +100% Damage and -25% Attack Speed\nEach hit has a 10% chance to not deal any damage.\nAfter Dizzy Mode ends:\nReset Drink Stacks to 0.\n-15% Damage and -10% Range for 15 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "shunks",
+            "name": "Shunks",
+            "alternatives": ["shanks"],
+            "image": "shunks.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
             "elements": ["Lightning"],
-            "placement_count": 0,
-            "placement_cost": 0,
-            "max_upgrade_cost": 0,
+            "placement_count": 3,
+            "placement_cost": 1300,
+            "max_upgrade_cost": 37300,
             "stats": {
                 "damage": 0,
                 "hp": 0,
@@ -2374,13 +4898,127 @@
             ]
         },
         {
+            "id": "shunks_evo",
+            "name": "Shunks (Haki)",
+            "alternatives": ["shanks"],
+            "image": "shunks_evo.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Lightning"],
+            "placement_count": 3,
+            "placement_cost": 1300,
+            "max_upgrade_cost": 84700,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Deadly Rhythm",
+                    "description": "Every third attack is a critical strike.\nIf this critical strike kills an enemy.\nShunks gains -10% Attack Speed for 10 seconds (stacks up to 20% attack speed reduction).",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Conqueror's Pressure",
+                    "description": "The lower an enemy's Health is, the stronger Shunks becomes:\nBelow 70% HP → Deals +10% damage to that enemy\nBelow 40% HP → Gains +20% Crit Chance against that enemy.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Conqueror's Will",
+                    "description": "Attacks apply Stun to enemies for 3 seconds. Each enemy has a 15-second cooldown before they can be applied Stun again.",
+                    "cooldown": 0,
+                    "upgrade": 9
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Radiant",
+                "Aurora"
+            ],
+            "best_traits_infinite": [
+                "Radiant",
+                "Aurora"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
+            "id": "slime",
+            "name": "Slime",
+            "alternatives": ["rimuru"],
+            "image": "slime.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Magic"],
+            "elements": ["Water"],
+            "placement_count": 3,
+            "placement_cost": 1300,
+            "max_upgrade_cost": 73700,
+            "stats": {
+                "damage": 1651,
+                "hp": 0,
+                "spa": 5,
+                "range": 18,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Predator",
+                    "description": "Every minute and a half Slime devours the enemy dealing 250% damage.\nIf an enemy is killed with this attack Slime gains +5% damage for 10 seconds.\nThis damage bonus stacks up to 3 times.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "slime_evo",
             "name": "Slime (Demon Lord)",
             "alternatives": ["rimuru"],
             "image": "slime_evo.png",
             "rarity": "Mythic",
-            "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "attributes": ["Hybrid"],
+            "damage_type": ["Magic"],
             "elements": ["Water"],
             "placement_count": 3,
             "placement_cost": 1300,
@@ -2431,7 +5069,7 @@
             "image": "sweet_witch.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Fire"],
             "placement_count": 4,
             "placement_cost": 1400,
@@ -2488,7 +5126,7 @@
             "image": "tanjuru_evo.png",
             "rarity": "Mythic",
             "attributes": ["Hybrid"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Light"],
             "placement_count": 4,
             "placement_cost": 1350,
@@ -2545,13 +5183,82 @@
             ]
         },
         {
+            "id": "toju",
+            "name": "Toju",
+            "alternatives": ["toji"],
+            "image": "toju.png",
+            "rarity": "Mythic",
+            "attributes": ["Ground"],
+            "damage_type": ["Physical"],
+            "elements": ["Fire"],
+            "placement_count": 3,
+            "placement_cost": 1200,
+            "max_upgrade_cost": 54050,
+            "stats": {
+                "damage": 2139,
+                "hp": 0,
+                "spa": 5.5,
+                "range": 14,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Unnatural Precision!",
+                    "description": "Attacks inflict Bleed equal to 30% of this unit's damage over 3 seconds.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "One Shot!",
+                    "description": "Every shot fired by Toju has an additional 2.5% critical chance and 100% critical damage.",
+                    "cooldown": 0,
+                    "upgrade": 0
+                },
+                {
+                    "name": "Cursed Null!",
+                    "description": "Each enemy attack by this unit has a 2.5% chance to deal 100% True Damage.",
+                    "cooldown": 0,
+                    "upgrade": 4
+                },
+                {
+                    "name": "Rejected Killer!",
+                    "description": "Each time Toju attacks the same enemy, the enemy takes +2% more damage from him (up to +20%).",
+                    "cooldown": 0,
+                    "upgrade": 7
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": true,
+            "best_traits_progressive": [
+                "Crusader",
+                "Radiant"
+            ],
+            "best_traits_infinite": [
+                "Crusader",
+                "Radiant"
+            ],
+            "curse": true,
+            "best_curse": [
+                "SPA",
+                "Range"
+            ]
+        },
+        {
             "id": "toju_evo",
             "name": "Toju (Mercenary)",
             "alternatives": ["toji"],
             "image": "toju_evo.png",
             "rarity": "Mythic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Fire"],
             "placement_count": 3,
             "placement_cost": 1200,
@@ -2620,7 +5327,7 @@
             "image": "golden_freezo.png",
             "rarity": "Legendary",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Light"],
             "placement_count": 5,
             "placement_cost": 800,
@@ -2671,7 +5378,7 @@
             "image": "greybeard.png",
             "rarity": "Legendary",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Dark"],
             "placement_count": 4,
             "placement_cost": 800,
@@ -2722,7 +5429,7 @@
             "image": "koichy.png",
             "rarity": "Legendary",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Air"],
             "placement_count": 4,
             "placement_cost": 850,
@@ -2771,8 +5478,8 @@
             "image": "loid.png",
             "rarity": "Legendary",
             "attributes": ["Farm"],
-            "damage_type": "",
-            "elements": [""],
+            "damage_type": [],
+            "elements": [],
             "placement_count": 1,
             "placement_cost": 800,
             "max_upgrade_cost": 39000,
@@ -2820,7 +5527,7 @@
             "image": "rose.png",
             "rarity": "Legendary",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Rose"],
             "placement_count": 4,
             "placement_cost": 1000,
@@ -2871,7 +5578,7 @@
             "image": "tanjuru.png",
             "rarity": "Legendary",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Water"],
             "placement_count": 4,
             "placement_cost": 950,
@@ -2922,7 +5629,7 @@
             "image": "ukia.png",
             "rarity": "Legendary",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Rose"],
             "placement_count": 3,
             "placement_cost": 800,
@@ -2971,7 +5678,7 @@
             "image": "ureo.png",
             "rarity": "Legendary",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Lightning"],
             "placement_count": 4,
             "placement_cost": 750,
@@ -3021,7 +5728,7 @@
             "image": "yuji.png",
             "rarity": "Legendary",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Water"],
             "placement_count": 3,
             "placement_cost": 900,
@@ -3071,7 +5778,7 @@
             "image": "friezo.png",
             "rarity": "Epic",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Dark"],
             "placement_count": 5,
             "placement_cost": 500,
@@ -3121,7 +5828,7 @@
             "image": "genoz.png",
             "rarity": "Epic",
             "attributes": ["Hill"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Fire"],
             "placement_count": 4,
             "placement_cost": 600,
@@ -3171,7 +5878,7 @@
             "image": "gone.png",
             "rarity": "Epic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Fire"],
             "placement_count": 3,
             "placement_cost": 650,
@@ -3221,7 +5928,7 @@
             "image": "kiloa.png",
             "rarity": "Epic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Lightning"],
             "placement_count": 4,
             "placement_cost": 400,
@@ -3271,7 +5978,7 @@
             "image": "luffie.png",
             "rarity": "Epic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Air"],
             "placement_count": 3,
             "placement_cost": 600,
@@ -3321,7 +6028,7 @@
             "image": "makunouchi.png",
             "rarity": "Epic",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Air"],
             "placement_count": 4,
             "placement_cost": 500,
@@ -3371,8 +6078,8 @@
             "image": "speedcart.png",
             "rarity": "Epic",
             "attributes": ["Farm"],
-            "damage_type": "",
-            "elements": [""],
+            "damage_type": [],
+            "elements": [],
             "placement_count": 3,
             "placement_cost": 550,
             "max_upgrade_cost": 8800,
@@ -3419,7 +6126,7 @@
             "image": "stork.png",
             "rarity": "Epic",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Lightning"],
             "placement_count": 5,
             "placement_cost": 500,
@@ -3469,7 +6176,7 @@
             "image": "gahan.png",
             "rarity": "Rare",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Light"],
             "placement_count": 4,
             "placement_cost": 400,
@@ -3519,7 +6226,7 @@
             "image": "goko_rare.png",
             "rarity": "Rare",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Lightning"],
             "placement_count": 6,
             "placement_cost": 300,
@@ -3569,7 +6276,7 @@
             "image": "ichigoat.png",
             "rarity": "Rare",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Lightning"],
             "placement_count": 4,
             "placement_cost": 400,
@@ -3619,7 +6326,7 @@
             "image": "kid_noruto.png",
             "rarity": "Rare",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Air"],
             "placement_count": 5,
             "placement_cost": 300,
@@ -3669,7 +6376,7 @@
             "image": "kid_sosuke.png",
             "rarity": "Rare",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Lightning"],
             "placement_count": 4,
             "placement_cost": 400,
@@ -3719,7 +6426,7 @@
             "image": "krillo.png",
             "rarity": "Rare",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Light"],
             "placement_count": 5,
             "placement_cost": 350,
@@ -3769,7 +6476,7 @@
             "image": "pikoko.png",
             "rarity": "Rare",
             "attributes": ["Hill"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Light"],
             "placement_count": 5,
             "placement_cost": 350,
@@ -3819,7 +6526,7 @@
             "image": "sanje.png",
             "rarity": "Rare",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Fire"],
             "placement_count": 6,
             "placement_cost": 300,
@@ -3869,7 +6576,7 @@
             "image": "vegtiable.png",
             "rarity": "Rare",
             "attributes": ["Ground"],
-            "damage_type": "Magic",
+            "damage_type": ["Magic"],
             "elements": ["Water"],
             "placement_count": 6,
             "placement_cost": 300,
@@ -3919,7 +6626,7 @@
             "image": "zoro.png",
             "rarity": "Rare",
             "attributes": ["Ground"],
-            "damage_type": "Physical",
+            "damage_type": ["Physical"],
             "elements": ["Air"],
             "placement_count": 4,
             "placement_cost": 400,

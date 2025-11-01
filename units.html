@@ -12,10 +12,13 @@
     <link rel="preload" href="fonts/MundoSansBlack.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="data/units.json" as="fetch" crossorigin>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/units.css">
     <script src="scripts/common.js"></script>
+    <script src="scripts/units.js"></script>
     <script>
         // Initialize global variables
         let allUnits = []; // Store all units globally
+        let showBaseUnits = false; // Toggle state for base units
         let activeFilters = {
             rarity: new Set(),
             attribute: new Set(),
@@ -24,6 +27,33 @@
         };
         let matchAllElements = false;
 
+        // Function to determine if a unit is a base version
+        function isBaseUnit(unitId) {
+            return !unitId.endsWith('_evo') && allUnits.some(unit => unit.id === `${unitId}_evo`);
+        }
+
+        // Function to setup base units toggle
+        function setupBaseUnitsToggle() {
+            const toggleUnevoBtn = document.getElementById('toggleUnevo');
+            if (toggleUnevoBtn) {
+                // Initial state
+                showBaseUnits = false;
+                toggleUnevoBtn.classList.remove('active');
+                toggleUnevoBtn.textContent = 'Hide Unevolved Units';
+
+                toggleUnevoBtn.addEventListener('click', () => {
+                    showBaseUnits = !showBaseUnits;
+                    toggleUnevoBtn.classList.toggle('active');
+                    toggleUnevoBtn.textContent = showBaseUnits ? 'Show Unevolved Units' : 'Hide Unevolved Units';
+                    
+                    // Reapply filters and update display
+                    const searchTerm = document.getElementById('unitSearch').value;
+                    const filteredUnits = filterUnits(searchTerm);
+                    displayUnits(filteredUnits);
+                });
+            }
+        }
+
         // Extract image URLs from units data
         const imageUrlsExtractor = (data) => {
             return data.units.map(unit => `images/units/${unit.image}`);
@@ -31,15 +61,17 @@
 
         async function loadUnits() {
             try {
-                // Load data using common function
+                // Load data using common function with cache bypass
                 const data = await loadData(
                     CACHE_KEYS.UNITS,
                     'data/units.json',
-                    imageUrlsExtractor
+                    imageUrlsExtractor,
+                    true // bypass cache to get fresh data
                 );
-
                 allUnits = data.units;
-                displayUnits(allUnits);
+                // Apply the initial filter for base units
+                const filteredUnits = filterUnits('');
+                displayUnits(filteredUnits);
 
             } catch (error) {
                 console.error('Error loading units:', error);
@@ -82,7 +114,10 @@
             <div class="search-container">
                 <div class="search-row">
                     <input type="text" id="unitSearch" placeholder="Search units..." class="search-box">
-                    <button id="toggleFilters" class="toggle-filters-btn">Filters ▼</button>
+                    <div class="button-group">
+                        <button id="toggleFilters" class="toggle-filters-btn">Filters ▼</button>
+                        <button id="toggleUnevo" class="toggle-filters-btn">Hide Unevolved Units</button>
+                    </div>
                 </div>
                 <div class="filters-container" id="filtersContainer">
                     <div class="filter-section">
@@ -145,6 +180,11 @@
                 <img id="modalUnitImage" src="" alt="">
                 <div class="modal-details">
                     <h2 id="modalUnitName"></h2>
+                    <div class="modal-icons-container">
+                        <div class="attributes-container" id="modalAttributes"></div>
+                        <div class="damage-types-container" id="modalDamageTypes"></div>
+                        <div class="elements-container" id="modalElements"></div>
+                    </div>
                 </div>
             </div>
             <div class="modal-body">
@@ -160,7 +200,7 @@
                 </div>
                 <div class="modal-column">
                     <div class="modal-section" id="statsSection">
-                        <h3>Base Stats</h3>
+                        <h3>Base Stats (Max Level)</h3>
                         <div class="stat-grid" id="modalStats"></div>
                     </div>
                     <div class="modal-section" id="costSection">
@@ -204,6 +244,53 @@
                 // Basic Info
                 document.getElementById('modalUnitImage').src = `images/units/${unitInfo.image}`;
                 document.getElementById('modalUnitName').textContent = unitInfo.name;
+
+                // Attributes, Damage Types and Elements
+                const attributesContainer = document.getElementById('modalAttributes');
+                const damageTypesContainer = document.getElementById('modalDamageTypes');
+                const elementsContainer = document.getElementById('modalElements');
+
+                // Clear previous icons and badges
+                attributesContainer.innerHTML = '';
+                
+                // Add attribute badges
+                if (unitInfo.attributes && unitInfo.attributes.length > 0) {
+                    unitInfo.attributes.forEach(attr => {
+                        const badge = document.createElement('span');
+                        badge.className = 'attribute-badge';
+                        badge.setAttribute('data-value', attr);
+                        badge.textContent = attr;
+                        attributesContainer.appendChild(badge);
+                    });
+                }
+                
+                // Clear previous icons
+                damageTypesContainer.innerHTML = '';
+                elementsContainer.innerHTML = '';
+                
+                // Add damage type icons if they exist
+                if (unitInfo.damage_type && unitInfo.damage_type.length > 0) {
+                    unitInfo.damage_type.forEach(type => {
+                        const img = document.createElement('img');
+                        img.src = `images/icons/damage_types/${type.toLowerCase()}.png`;
+                        img.alt = type;
+                        img.title = type;
+                        img.className = 'damage-type-icon';
+                        damageTypesContainer.appendChild(img);
+                    });
+                }
+                
+                // Add element icons if they exist
+                if (unitInfo.elements && unitInfo.elements.length > 0) {
+                    unitInfo.elements.forEach(element => {
+                        const img = document.createElement('img');
+                        img.src = `images/icons/elements/${element.toLowerCase()}.png`;
+                        img.alt = element;
+                        img.title = element;
+                        img.className = 'element-icon';
+                        elementsContainer.appendChild(img);
+                    });
+                }
 
                 // Stats
                 const statsContainer = document.getElementById('modalStats');
@@ -509,6 +596,12 @@
             }
             // Make a copy of the units array to avoid mutating the original
             let filteredUnits = [...allUnits];
+
+            // First apply the base units filter
+            if (showBaseUnits) {
+                filteredUnits = filteredUnits.filter(unit => !isBaseUnit(unit.id));
+            }
+            
             console.log('Filtering units, total units:', filteredUnits.length);
 
             // Apply search filter
@@ -545,7 +638,7 @@
             // Apply damage type filters
             if (activeFilters.damage.size > 0) {
                 filteredUnits = filteredUnits.filter(unit => 
-                    activeFilters.damage.has(unit.damage_type)
+                    unit.damage_type.some(type => activeFilters.damage.has(type))
                 );
                 console.log('After damage type filter:', filteredUnits.length);
             }
@@ -630,8 +723,13 @@
                 });
                 console.log('Search functionality initialized');
 
-                // Initial display of all units
-                displayUnits(allUnits);
+                // Setup base units toggle
+                setupBaseUnitsToggle();
+                console.log('Base units toggle initialized');
+
+                // Initial display of filtered units
+                const filteredUnits = filterUnits('');
+                displayUnits(filteredUnits);
                 console.log('Initial units displayed');
             } catch (error) {
                 console.error('Error initializing UI:', error);
