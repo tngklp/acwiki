@@ -5695,6 +5695,7 @@
                 {
                     "name": "",
                     "description": "",
+                    "cooldown": 0,
                     "upgrade": 0
                 }
             ],
@@ -5719,6 +5720,57 @@
             "best_curse": [
                 "",
                 ""
+            ]
+        },
+        {
+            "id": "useless_goddess",
+            "name": "Useless Goddess",
+            "alternatives": ["aqua"],
+            "image": "useless_goddess.png",
+            "rarity": "Legendary",
+            "attributes": ["Hybrid"],
+            "damage_type": ["Magic"],
+            "elements": ["Water"],
+            "placement_count": 0,
+            "placement_cost": 1000,
+            "max_upgrade_cost": 0,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "Divine Blessing",
+                    "description": "While this unit is on the field, all units in range with Magic Type gain +10-60% Damage depending on the upgrade level of this unit. (cannot stack)",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": false,
+            "best_traits_progressive": [
+                "",
+                ""
+            ],
+            "best_traits_infinite": [
+                "",
+                ""
+            ],
+            "curse": true,
+            "best_curse": [
+                "Range",
+                "Damage"
             ]
         },
         {
@@ -6069,6 +6121,57 @@
             "best_curse": [
                 "",
                 ""
+            ]
+        },
+        {
+            "id": "mr_champion",
+            "name": "Mr Champion",
+            "alternatives": [],
+            "image": "mr_champion.png",
+            "rarity": "Legendary",
+            "attributes": ["Hybrid"],
+            "damage_type": ["Magic"],
+            "elements": ["Water"],
+            "placement_count": 0,
+            "placement_cost": 1000,
+            "max_upgrade_cost": 0,
+            "stats": {
+                "damage": 0,
+                "hp": 0,
+                "spa": 0,
+                "range": 0,
+                "yen": 0
+            },
+            "has_passive": true,
+            "passive": [
+                {
+                    "name": "World Champion's Aura",
+                    "description": "While this unit is on the field, all units in range with Physical Type gain +10-60% Damage depending on the upgrade level of this unit. (cannot stack)",
+                    "cooldown": 0,
+                    "upgrade": 0
+                }
+            ],
+            "has_ability": false,
+            "ability": {
+                "name": "",
+                "description": "",
+                "cooldown": 0,
+                "upgrade": 0,
+                "global": false
+            },
+            "traits": false,
+            "best_traits_progressive": [
+                "",
+                ""
+            ],
+            "best_traits_infinite": [
+                "",
+                ""
+            ],
+            "curse": true,
+            "best_curse": [
+                "Range",
+                "Damage"
             ]
         },
         {
