@@ -43,12 +43,11 @@
       "units": [
         "ai_evo",
         "zero_evo",
+        "useless_goddess",
+        "mr_champion",
         "rio",
         "blur_evo",
-        "hidoh_evo",
-        "ries_evo",
-        "ukia",
-        "koichy"
+        "hidoh_evo"
       ]
     },
     {
@@ -94,6 +93,9 @@
       "name": "Support",
       "class": "support",
       "units": [
+        "ries_evo",
+        "ukia",
+        "koichy",
         "giu_evo",
         "bones_evo",
         "goju_evo",
