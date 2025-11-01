@@ -14,11 +14,10 @@
       "name": "Meta Ground",
       "class": "meta-ground",
       "units": [
-        "kurimi_evo",
+        "karakuri_evo",
         "tengin_evo",
         "nagu_evo",
         "sun_woo_evo",
-        "karakuri_evo",
         "psycho_evo",
         "reijin_evo",
         "fat_hitman_evo",
@@ -38,6 +37,7 @@
       "name": "Meta Support",
       "class": "meta-support",
       "units": [
+        "kurumi_evo",
         "zero_evo",
         "useless_goddess",
         "mr_champion",
